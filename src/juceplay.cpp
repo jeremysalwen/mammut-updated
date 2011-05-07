@@ -177,7 +177,7 @@ public:
     audioDeviceManager.addChangeListener(this);
   }
 
-  void changeListenerCallback(void *something){
+  void changeListenerCallback(ChangeBroadcaster *something){
     printf("Some audio change thing.\n");
     if(audioDeviceManager.getCurrentAudioDevice()!=NULL){
       samplerate=audioDeviceManager.getCurrentAudioDevice()->getCurrentSampleRate();
@@ -205,7 +205,7 @@ public:
 	isinitialized=true;
 	
 	// start the IO device pulling its data from our callback..
-	audioDeviceManager.setAudioCallback (this);
+	audioDeviceManager.addAudioCallback (this);
 	
       }
   }
@@ -493,7 +493,7 @@ public:
     AudioDeviceSelectorComponent audioSettingsComp (audioDeviceManager,
 						    0, 0,
 						    2, 8,
-						    false);
+						    false,false,false,false);
     
     // ...and show it in a DialogWindow...
     audioSettingsComp.setSize (400, 170);
@@ -506,10 +506,10 @@ public:
     }
   }
   
-  void audioDeviceAboutToStart (double sampleRate, int numSamplesPerBlock)
+  void audioDeviceAboutToStart (AudioIODevice* device)
   {
-    printf("Samplerate set to %f\n",(float)sampleRate);
-    samplerate=sampleRate;
+  	samplerate=device->getCurrentSampleRate();
+    printf("Samplerate set to %f\n",(float)samplerate);
     return;
   }
   

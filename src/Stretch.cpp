@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:07:06 pm
+  Creation date:  7 May 2011 4:27:27am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -30,6 +30,8 @@
 #include "Stretch.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Stretch::Stretch ()
@@ -71,12 +73,12 @@ Stretch::Stretch ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x957f7f9f));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x3b7d7dab));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -92,8 +94,12 @@ Stretch::Stretch ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x5498908a));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -123,15 +129,17 @@ Stretch::~Stretch()
 //==============================================================================
 void Stretch::paint (Graphics& g)
 {
-    GradientBrush gradient_1 (Colour (0x7bf00ff),
-                              50.0f, 50.0f,
-                              Colour (0x8000),
-                              48.0f, 136.0f,
-                              false);
-    g.setBrush (&gradient_1);
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    g.setGradientFill (ColourGradient (Colour (0x7bf00ff),
+                                       50.0f, 50.0f,
+                                       Colour (0x8000),
+                                       48.0f, 136.0f,
+                                       false));
     g.fillRect (-32, -72, 984, 216);
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
   //fillit();
     //[/UserPaint]
 }
@@ -221,31 +229,33 @@ BEGIN_JUCER_METADATA
           hasStroke="0"/>
   </BACKGROUND>
   <GROUPCOMPONENT name="new group" id="861cd5ab6e386a21" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Stretch" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Stretch" textpos="33"/>
   <SLIDER name="exponentslider" id="70a9a4d0ceb85170" memberName="exponentslider"
-          pos="88 11 736 40" bkgcol="865656" thumbcol="75fffcfc" trackcol="7f000000"
-          textboxbkgd="e6c76b" textboxoutline="ff000000" min="0.5" max="1.5"
-          int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="30"/>
-  <LABEL name="new label" id="650f625606ef6e82" memberName="label" pos="17 21 64 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Exponent" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
-         bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="88 11 736 40" bkgcol="865656"
+          thumbcol="75fffcfc" trackcol="7f000000" textboxbkgd="e6c76b"
+          textboxoutline="ff000000" min="0.5" max="1.5" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="30" skewFactor="1"/>
+  <LABEL name="new label" id="650f625606ef6e82" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="17 21 64 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Exponent"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="a3b718126599323b" memberName="textButton"
-              pos="24 64 136 32" bgColOff="957f7f9f" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="24 64 136 32" bgColOff="957f7f9f"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="7aaa3e2d855e515a" memberName="resetbutton"
-              pos="240 56 104 40" bgColOff="3b7d7dab" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="4452769f089c5015" memberName="label2" pos="352 56 480 48"
-         bkgCol="0" textCol="ff000000" outlineCol="cd1717" edTextCol="ff000000"
-         edBkgCol="0" labelText="&#10;All frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. &#10;&#10;"
+              virtualName="" explicitFocusOrder="0" pos="240 56 104 40" bgColOff="3b7d7dab"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="4452769f089c5015" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="352 56 480 48" bkgCol="0" textCol="ff000000"
+         outlineCol="cd1717" edTextCol="ff000000" edBkgCol="0" labelText="&#10;All frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. &#10;&#10;"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="11.2" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="160 64 72 32" bgColOff="5498908a" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="160 64 72 32" bgColOff="5498908a"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

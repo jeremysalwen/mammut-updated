@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  15 Feb 2007 8:59:08 pm
+  Creation date:  7 May 2011 4:10:17am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -76,6 +78,8 @@ class DasTabbedComponent  : public TabbedComponent
 #include "Zoom.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
@@ -137,10 +141,10 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
 
     addAndMakeVisible (stopbutton = new TextButton (T("Play")));
     stopbutton->setButtonText (T("Stop"));
-    stopbutton->addButtonListener (this);
+    stopbutton->addListener (this);
     stopbutton->setColour (TextButton::buttonColourId, Colour (0x5cabba2a));
     stopbutton->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    stopbutton->setColour (TextButton::textColourId, Colours::black);
+    stopbutton->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (tabbedComponent = new TabbedComponent (TabbedButtonBar::TabsAtTop));
     tabbedComponent->setTabBarDepth (20);
@@ -203,7 +207,7 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     correlatebutton->setTooltip (T("Correlate. Will simply complex-multiply two spectra, giving the correlation."));
     correlatebutton->setButtonText (T("Correlate"));
     correlatebutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    correlatebutton->addButtonListener (this);
+    correlatebutton->addListener (this);
     correlatebutton->setColour (TextButton::buttonColourId, Colour (0x88b26134));
     correlatebutton->setColour (TextButton::buttonOnColourId, Colour (0x371ed220));
 
@@ -211,7 +215,7 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     funbutton->setTooltip (T("Fun. Simple complex multiplication, with intended programming \"errors\" (sign reversals and coefficient swaps)."));
     funbutton->setButtonText (T("Fun"));
     funbutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    funbutton->addButtonListener (this);
+    funbutton->addListener (this);
     funbutton->setColour (TextButton::buttonColourId, Colour (0x8ab26134));
     funbutton->setColour (TextButton::buttonOnColourId, Colour (0x3b6eff44));
 
@@ -219,34 +223,35 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     abbutton->setTooltip (T("A^B. Raise spectrum A to the power of spectrum B. Useless (?)"));
     abbutton->setButtonText (T("A^B"));
     abbutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    abbutton->addButtonListener (this);
+    abbutton->addListener (this);
     abbutton->setColour (TextButton::buttonColourId, Colour (0x8ab26135));
     abbutton->setColour (TextButton::buttonOnColourId, Colour (0x3944ff64));
 
     addAndMakeVisible (hyperlinkButton = new HyperlinkButton (T("http://www.notam02.no"),
                                                               URL (T("http://www.notam02.no/notam02/prod-prg-mammuthelp.html"))));
     hyperlinkButton->setTooltip (T("http://www.notam02.no/notam02/prod-prg-mammuthelp.html"));
+    hyperlinkButton->setButtonText (T("http://www.notam02.no"));
     hyperlinkButton->setColour (HyperlinkButton::textColourId, Colour (0x930004ff));
 
     addAndMakeVisible (savebutton = new TextButton (T("new button")));
     savebutton->setButtonText (T("Save"));
-    savebutton->addButtonListener (this);
+    savebutton->addListener (this);
     savebutton->setColour (TextButton::buttonColourId, Colour (0x6ed58d00));
 
     addAndMakeVisible (playbutton = new TextButton (T("Play")));
     playbutton->setButtonText (T("Start"));
-    playbutton->addButtonListener (this);
+    playbutton->addListener (this);
     playbutton->setColour (TextButton::buttonColourId, Colour (0x7da9a335));
-    playbutton->setColour (TextButton::textColourId, Colours::black);
+    playbutton->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (loadbrowse = new TextButton (T("new button")));
     loadbrowse->setButtonText (T("browse"));
-    loadbrowse->addButtonListener (this);
+    loadbrowse->addListener (this);
     loadbrowse->setColour (TextButton::buttonColourId, Colour (0x469bd243));
 
     addAndMakeVisible (loadmulbrowse = new TextButton (T("new button")));
     loadmulbrowse->setButtonText (T("browse"));
-    loadmulbrowse->addButtonListener (this);
+    loadmulbrowse->addListener (this);
     loadmulbrowse->setColour (TextButton::buttonColourId, Colour (0x449bd2d7));
 
     addAndMakeVisible (loadcomboBox = new ComboBox (T("new combo box")));
@@ -258,20 +263,20 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
 
     addAndMakeVisible (reload = new TextButton (T("new button")));
     reload->setButtonText (T("reload"));
-    reload->addButtonListener (this);
+    reload->addListener (this);
     reload->setColour (TextButton::buttonColourId, Colour (0x449bd243));
 
     addAndMakeVisible (convolvebutton = new TextButton (T("new button")));
     convolvebutton->setTooltip (T("Will complex-multiply with the spectrum of the reversed sound. Use this for standard, high-quality convolution with eg. a room response."));
     convolvebutton->setButtonText (T("Convolve"));
     convolvebutton->setConnectedEdges (Button::ConnectedOnRight);
-    convolvebutton->addButtonListener (this);
+    convolvebutton->addListener (this);
     convolvebutton->setColour (TextButton::buttonColourId, Colour (0x8aa64f15));
     convolvebutton->setColour (TextButton::buttonOnColourId, Colour (0x3b66ff44));
 
     addAndMakeVisible (reloadmul = new TextButton (T("new button")));
     reloadmul->setButtonText (T("reload"));
-    reloadmul->addButtonListener (this);
+    reloadmul->addListener (this);
     reloadmul->setColour (TextButton::buttonColourId, Colour (0x449bd2d7));
 
     addAndMakeVisible (loadmulcomboBox = new ComboBox (T("new combo box")));
@@ -284,7 +289,7 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     addAndMakeVisible (phaseampbutton = new TextButton (T("new button")));
     phaseampbutton->setButtonText (T("Phase/Amp"));
     phaseampbutton->setConnectedEdges (Button::ConnectedOnLeft);
-    phaseampbutton->addButtonListener (this);
+    phaseampbutton->addListener (this);
     phaseampbutton->setColour (TextButton::buttonColourId, Colour (0x4bd8530a));
     phaseampbutton->setColour (TextButton::buttonOnColourId, Colour (0x4284ff44));
 
@@ -323,26 +328,30 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     addAndMakeVisible (normalizebutton = new ToggleButton (T("new toggle button")));
     normalizebutton->setTooltip (T("Also works when playing"));
     normalizebutton->setButtonText (T("normalize"));
-    normalizebutton->addButtonListener (this);
+    normalizebutton->addListener (this);
 
     addAndMakeVisible (saveasbutton = new TextButton (T("new button")));
     saveasbutton->setButtonText (T("Save As"));
-    saveasbutton->addButtonListener (this);
+    saveasbutton->addListener (this);
     saveasbutton->setColour (TextButton::buttonColourId, Colour (0x6ac18400));
 
     addAndMakeVisible (aboutbutton = new TextButton (T("aboutbutton")));
     aboutbutton->setButtonText (T("About"));
-    aboutbutton->addButtonListener (this);
+    aboutbutton->addListener (this);
     aboutbutton->setColour (TextButton::buttonColourId, Colour (0x1fbbbbff));
     aboutbutton->setColour (TextButton::buttonOnColourId, Colour (0x86a15f5f));
-    aboutbutton->setColour (TextButton::textColourId, Colour (0xc4000000));
+    aboutbutton->setColour (TextButton::textColourOnId, Colour (0xc4000000));
 
     addAndMakeVisible (prefsbutton = new TextButton (T("prefsbutton")));
     prefsbutton->setButtonText (T("Prefs"));
-    prefsbutton->addButtonListener (this);
+    prefsbutton->addListener (this);
     prefsbutton->setColour (TextButton::buttonColourId, Colour (0x1fbbbbff));
     prefsbutton->setColour (TextButton::buttonOnColourId, Colour (0x86a15f5f));
-    prefsbutton->setColour (TextButton::textColourId, Colour (0xc4000000));
+    prefsbutton->setColour (TextButton::textColourOnId, Colour (0xc4000000));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (900, 800);
 
@@ -374,7 +383,10 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
     tabbedComponent->getTabContentComponent(tabbedComponent->getNumTabs()-2)->setEnabled(samps_per_frame>=2?true:false);
 
     tabbedComponent->setEnabled(false);
-    tabbedComponent->setOutline(Colour(0x00ddf1ee),0);
+    for(int i=0;i<tabbedComponent->getNumTabs(); i++) {
+    	tabbedComponent->setTabBackgroundColour(i,Colour(0x00ddf1ee));
+    }
+    tabbedComponent->setOutline(0);
     tabbedComponent->setIndent(0);
 
     //->setClickingTogglesState (true);
@@ -433,7 +445,7 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
 Interface::~Interface()
 {
     //[Destructor_pre]. You can add your own custom destruction code here..
-  printf("exitgakk0 %d\n",sizeof(float));
+  printf("exitgakk0 %lu\n",sizeof(float));
   printf("exitgakk\n");
     //[/Destructor_pre]
 
@@ -477,6 +489,9 @@ Interface::~Interface()
 //==============================================================================
 void Interface::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colour (0xffddf1ee));
 
     g.setColour (Colours::black);
@@ -485,31 +500,28 @@ void Interface::paint (Graphics& g)
                 408, 312, 200, 30,
                 Justification::centred, true);
 
-    GradientBrush gradient_1 (Colours::red,
-                              50.0f, 50.0f,
-                              Colours::green,
-                              744.0f, 576.0f,
-                              false);
-    g.setBrush (&gradient_1);
+    g.setGradientFill (ColourGradient (Colours::red,
+                                       50.0f, 50.0f,
+                                       Colours::green,
+                                       744.0f, 576.0f,
+                                       false));
     g.fillRoundedRectangle (0.0f, 448.0f, 960.0f, 384.0f, 21.5000f);
 
-    GradientBrush gradient_2 (Colour (0x7bf98f33),
-                              664.0f, 40.0f,
-                              Colour (0xd78c8c8c),
-                              720.0f, 560.0f,
-                              false);
-    g.setBrush (&gradient_2);
+    g.setGradientFill (ColourGradient (Colour (0x7bf98f33),
+                                       664.0f, 40.0f,
+                                       Colour (0xd78c8c8c),
+                                       720.0f, 560.0f,
+                                       false));
     g.fillRect (-8, -24, 976, 864);
 
-    GradientBrush gradient_3 (Colour (0x219d2323),
-                              16.0f, 736.0f,
-                              Colour (0x5f0f1615),
-                              696.0f, 752.0f,
-                              true);
-    g.setBrush (&gradient_3);
+    g.setGradientFill (ColourGradient (Colour (0x219d2323),
+                                       16.0f, 736.0f,
+                                       Colour (0x5f0f1615),
+                                       696.0f, 752.0f,
+                                       true));
     g.fillRoundedRectangle (0.0f, 584.0f, 960.0f, 304.0f, 21.5000f);
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
 #if 1
     uint32 starttime=Time::getMillisecondCounter();
 
@@ -518,7 +530,7 @@ void Interface::paint (Graphics& g)
       g.setColour (Colours::black.withAlpha (1.0f));//0.5140f));
       g.drawImage (internalCachedImage4,
 		   -8, 640, 384, 104,
-		   0, 0, internalCachedImage4->getWidth(), internalCachedImage4->getHeight());
+		   0, 0, internalCachedImage4.getWidth(), internalCachedImage4.getHeight());
     }
 
     g.setImageResamplingQuality(Graphics::lowResamplingQuality);
@@ -602,6 +614,9 @@ void Interface::resized()
 
 void Interface::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == stopbutton)
     {
         //[UserButtonCode_stopbutton] -- add your button handler code here..
@@ -811,10 +826,16 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
       DialogWindow::showModalDialog("Preferences",prefscomponent,this,Colour((uint8)0,(uint8)0,(uint8)0,(uint8)0x90),true);
         //[/UserButtonCode_prefsbutton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 void Interface::sliderValueChanged (Slider* sliderThatWasMoved)
 {
+    //[UsersliderValueChanged_Pre]
+    //[/UsersliderValueChanged_Pre]
+
     if (sliderThatWasMoved == undoredoinc)
     {
         //[UserSliderCode_undoredoinc] -- add your slider handling code here..
@@ -871,10 +892,16 @@ void Interface::sliderValueChanged (Slider* sliderThatWasMoved)
       jp_playpos=(int)((playposslider->getValue()/256.0f)*N);
         //[/UserSliderCode_playposslider]
     }
+
+    //[UsersliderValueChanged_Post]
+    //[/UsersliderValueChanged_Post]
 }
 
 void Interface::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
 {
+    //[UsercomboBoxChanged_Pre]
+    //[/UsercomboBoxChanged_Pre]
+
     if (comboBoxThatHasChanged == loadcomboBox)
     {
         //[UserComboBoxCode_loadcomboBox] -- add your combo box handling code here..
@@ -937,14 +964,16 @@ void Interface::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
 
         //[/UserComboBoxCode_loadmulcomboBox]
     }
+
+    //[UsercomboBoxChanged_Post]
+    //[/UsercomboBoxChanged_Post]
 }
 
-bool Interface::filesDropped (const StringArray& filenames, int mouseX, int mouseY)
+void Interface::filesDropped (const StringArray& filenames, int mouseX, int mouseY)
 {
     //[UserCode_filesDropped] -- Add your code here...
   loadcomboBox->setText(filenames[0],true);
   loadFile((char*)filenames[0].toUTF8());
-  return true;
     //[/UserCode_filesDropped]
 }
 
@@ -973,7 +1002,7 @@ bool Interface::keyPressed (const KeyPress& key)
     return false;
 
   return true;
-  
+
     //[/UserCode_keyPressed]
 }
 
@@ -1269,21 +1298,28 @@ BEGIN_JUCER_METADATA
     <ROUNDRECT pos="0 584 960 304" cornerSize="21.5" fill=" radial: 16 736, 696 752, 0=219d2323, 1=5f0f1615"
                hasStroke="0"/>
   </BACKGROUND>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent5" pos="649 587 200 64"
-                  outlinecol="b0000000" title="Misc"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent4" pos="745 651 104 80"
-                  outlinecol="b0000000" title="Save"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent3" pos="9 587 424 64"
-                  outlinecol="b2000000" textcol="ff000000" title="Play"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent1" pos="9 651 368 80"
-                  outlinecol="b2000000" textcol="ff000000" title="Load &amp; Analyze"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent" pos="433 587 216 64"
-                  outlinecol="b2000000" title="Undo/Redo"/>
-  <TEXTBUTTON name="Play" memberName="stopbutton" pos="87 604 71 40" bgColOff="5cabba2a"
+  <GROUPCOMPONENT name="new group" id="5fed473e320c199f" memberName="groupComponent5"
+                  virtualName="" explicitFocusOrder="0" pos="649 587 200 64" outlinecol="b0000000"
+                  title="Misc"/>
+  <GROUPCOMPONENT name="new group" id="a4a1914d03ff4a70" memberName="groupComponent4"
+                  virtualName="" explicitFocusOrder="0" pos="745 651 104 80" outlinecol="b0000000"
+                  title="Save"/>
+  <GROUPCOMPONENT name="new group" id="ba14dcfa7e27e80f" memberName="groupComponent3"
+                  virtualName="" explicitFocusOrder="0" pos="9 587 424 64" outlinecol="b2000000"
+                  textcol="ff000000" title="Play"/>
+  <GROUPCOMPONENT name="new group" id="26d6bbdbff6d143a" memberName="groupComponent1"
+                  virtualName="" explicitFocusOrder="0" pos="9 651 368 80" outlinecol="b2000000"
+                  textcol="ff000000" title="Load &amp; Analyze"/>
+  <GROUPCOMPONENT name="new group" id="28a2fc87eb968ed4" memberName="groupComponent"
+                  virtualName="" explicitFocusOrder="0" pos="433 587 216 64" outlinecol="b2000000"
+                  title="Undo/Redo"/>
+  <TEXTBUTTON name="Play" id="6d57d80e67efcbc1" memberName="stopbutton" virtualName=""
+              explicitFocusOrder="0" pos="87 604 71 40" bgColOff="5cabba2a"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Stop" connectedEdges="0"
-              needsCallback="1"/>
-  <TABBEDCOMPONENT name="new tabbed component" memberName="tabbedComponent" pos="7 450 848 136"
-                   orientation="top" tabBarDepth="20" initialTab="0">
+              needsCallback="1" radioGroupId="0"/>
+  <TABBEDCOMPONENT name="new tabbed component" id="ffe192613dc2b24a" memberName="tabbedComponent"
+                   virtualName="" explicitFocusOrder="0" pos="7 450 848 136" orientation="top"
+                   tabBarDepth="20" initialTab="0">
     <TAB name="Stretch" colour="3bf8f4c6" useJucerComp="1" contentClassName="Tabtest"
          constructorParams="" jucerComponentFile="Stretch.cpp"/>
     <TAB name="Wobble" colour="95e0cce6" useJucerComp="1" contentClassName=""
@@ -1306,8 +1342,8 @@ BEGIN_JUCER_METADATA
          constructorParams="" jucerComponentFile="Mirror.cpp"/>
     <TAB name="Keep Peaks" colour="84f7e1e1" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="KeepPeaks.cpp"/>
-    <TAB name="Amplitude-&gt;Phase" colour="82e5f8e3" useJucerComp="1" contentClassName=""
-         constructorParams="" jucerComponentFile="AmplitudeToPhase.cpp"/>
+    <TAB name="Amplitude-&gt;Phase" colour="82e5f8e3" useJucerComp="1"
+         contentClassName="" constructorParams="" jucerComponentFile="AmplitudeToPhase.cpp"/>
     <TAB name="Gain" colour="6ef1f2d1" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="Gain.cpp"/>
     <TAB name="CombSplit" colour="7bc4ffef" useJucerComp="1" contentClassName=""
@@ -1319,87 +1355,106 @@ BEGIN_JUCER_METADATA
     <TAB name="Zoom" colour="b0f5f5dc" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="Zoom.cpp"/>
   </TABBEDCOMPONENT>
-  <SLIDER name="new slider" memberName="undoredoinc" pos="449 611 56 24"
-          bkgcol="0" thumbcol="ff000000" trackcol="79000000" textboxtext="ff000000"
+  <SLIDER name="new slider" id="352f2ca5f345ec68" memberName="undoredoinc"
+          virtualName="" explicitFocusOrder="0" pos="449 611 56 24" bkgcol="0"
+          thumbcol="ff000000" trackcol="79000000" textboxtext="ff000000"
           textboxbkgd="ffffffff" textboxhighlight="401a1aa8" min="0" max="0"
           int="1" style="IncDecButtons" textBoxPos="NoTextBox" textBoxEditable="0"
-          textBoxWidth="80" textBoxHeight="20"/>
-  <SLIDER name="new slider" memberName="undoredoslider" pos="513 611 120 24"
-          bkgcol="5ce5f4f5" thumbcol="5c8d8f92" textboxbkgd="ffffffff"
-          min="0" max="0" int="1" style="LinearBar" textBoxPos="TextBoxAbove"
-          textBoxEditable="0" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" memberName="label" pos="17 667 160 24" bkgCol="0"
-         textCol="ff000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="Duration Doubling" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
-         bold="0" italic="0" justification="33"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent2" pos="377 651 368 80"
-                  outlinecol="b4000000" title="Load &amp; Multiply"/>
-  <TEXTBUTTON name="new button" memberName="correlatebutton" pos="441 667 56 24"
-              tooltip="Correlate. Will simply complex-multiply two spectra, giving the correlation."
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <SLIDER name="new slider" id="5472b3b588f0569f" memberName="undoredoslider"
+          virtualName="" explicitFocusOrder="0" pos="513 611 120 24" bkgcol="5ce5f4f5"
+          thumbcol="5c8d8f92" textboxbkgd="ffffffff" min="0" max="0" int="1"
+          style="LinearBar" textBoxPos="TextBoxAbove" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="dd5eb268c1ec7552" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="17 667 160 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Duration Doubling"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
+  <GROUPCOMPONENT name="new group" id="c97cae58de44e2b7" memberName="groupComponent2"
+                  virtualName="" explicitFocusOrder="0" pos="377 651 368 80" outlinecol="b4000000"
+                  title="Load &amp; Multiply"/>
+  <TEXTBUTTON name="new button" id="3b122737a40500dc" memberName="correlatebutton"
+              virtualName="" explicitFocusOrder="0" pos="441 667 56 24" tooltip="Correlate. Will simply complex-multiply two spectra, giving the correlation."
               bgColOff="88b26134" bgColOn="371ed220" buttonText="Correlate"
-              connectedEdges="3" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="funbutton" pos="497 667 48 24"
-              tooltip="Fun. Simple complex multiplication, with intended programming &quot;errors&quot; (sign reversals and coefficient swaps)."
+              connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="c572a3fa2c91ed50" memberName="funbutton"
+              virtualName="" explicitFocusOrder="0" pos="497 667 48 24" tooltip="Fun. Simple complex multiplication, with intended programming &quot;errors&quot; (sign reversals and coefficient swaps)."
               bgColOff="8ab26134" bgColOn="3b6eff44" buttonText="Fun" connectedEdges="3"
-              needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="abbutton" pos="545 667 48 24" tooltip="A&#94;B. Raise spectrum A to the power of spectrum B. Useless (?)"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="d976be5f7607506e" memberName="abbutton"
+              virtualName="" explicitFocusOrder="0" pos="545 667 48 24" tooltip="A&#94;B. Raise spectrum A to the power of spectrum B. Useless (?)"
               bgColOff="8ab26135" bgColOn="3944ff64" buttonText="A&#94;B" connectedEdges="3"
-              needsCallback="1"/>
-  <HYPERLINKBUTTON name="new hyperlink" memberName="hyperlinkButton" pos="656 624 184 22"
-                   tooltip="http://www.notam02.no/notam02/prod-prg-mammuthelp.html"
+              needsCallback="1" radioGroupId="0"/>
+  <HYPERLINKBUTTON name="new hyperlink" id="3def249a6e1d3867" memberName="hyperlinkButton"
+                   virtualName="" explicitFocusOrder="0" pos="656 624 184 22" tooltip="http://www.notam02.no/notam02/prod-prg-mammuthelp.html"
                    textCol="930004ff" buttonText="http://www.notam02.no" connectedEdges="0"
-                   needsCallback="0" url="http://www.notam02.no/notam02/prod-prg-mammuthelp.html"/>
-  <TEXTBUTTON name="new button" memberName="savebutton" pos="761 667 72 20"
-              bgColOff="6ed58d00" buttonText="Save" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="playbutton" pos="17 603 71 40" bgColOff="7da9a335"
-              textCol="ff000000" buttonText="Start" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="loadbrowse" pos="305 699 64 24"
-              bgColOff="469bd243" buttonText="browse" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="loadmulbrowse" pos="673 699 64 24"
-              bgColOff="449bd2d7" buttonText="browse" connectedEdges="0" needsCallback="1"/>
-  <COMBOBOX name="new combo box" memberName="loadcomboBox" pos="17 699 280 24"
-            editable="1" layout="33" items="" textWhenNonSelected="(choose a soundfile)"
+                   needsCallback="0" radioGroupId="0" url="http://www.notam02.no/notam02/prod-prg-mammuthelp.html"/>
+  <TEXTBUTTON name="new button" id="9bed022f4d195073" memberName="savebutton"
+              virtualName="" explicitFocusOrder="0" pos="761 667 72 20" bgColOff="6ed58d00"
+              buttonText="Save" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="d8797c3c9a627ed9" memberName="playbutton" virtualName=""
+              explicitFocusOrder="0" pos="17 603 71 40" bgColOff="7da9a335"
+              textCol="ff000000" buttonText="Start" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="977ebacb9f14d8a5" memberName="loadbrowse"
+              virtualName="" explicitFocusOrder="0" pos="305 699 64 24" bgColOff="469bd243"
+              buttonText="browse" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="5665a7da3371f84c" memberName="loadmulbrowse"
+              virtualName="" explicitFocusOrder="0" pos="673 699 64 24" bgColOff="449bd2d7"
+              buttonText="browse" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <COMBOBOX name="new combo box" id="7ccbee3fb4f2ac8d" memberName="loadcomboBox"
+            virtualName="" explicitFocusOrder="0" pos="17 699 280 24" editable="1"
+            layout="33" items="" textWhenNonSelected="(choose a soundfile)"
             textWhenNoItems="(choose a soundfile)"/>
-  <TEXTBUTTON name="new button" memberName="reload" pos="305 667 64 24" bgColOff="449bd243"
-              buttonText="reload" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="convolvebutton" pos="385 667 56 24"
-              tooltip="Will complex-multiply with the spectrum of the reversed sound. Use this for standard, high-quality convolution with eg. a room response."
+  <TEXTBUTTON name="new button" id="608a25976358b74f" memberName="reload" virtualName=""
+              explicitFocusOrder="0" pos="305 667 64 24" bgColOff="449bd243"
+              buttonText="reload" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="e33f4dd66bc6804a" memberName="convolvebutton"
+              virtualName="" explicitFocusOrder="0" pos="385 667 56 24" tooltip="Will complex-multiply with the spectrum of the reversed sound. Use this for standard, high-quality convolution with eg. a room response."
               bgColOff="8aa64f15" bgColOn="3b66ff44" buttonText="Convolve"
-              connectedEdges="2" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="reloadmul" pos="673 667 64 24"
-              bgColOff="449bd2d7" buttonText="reload" connectedEdges="0" needsCallback="1"/>
-  <COMBOBOX name="new combo box" memberName="loadmulcomboBox" pos="385 699 280 24"
-            editable="1" layout="33" items="" textWhenNonSelected="(choose a soundfile)"
+              connectedEdges="2" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="7b86143a952e45bf" memberName="reloadmul"
+              virtualName="" explicitFocusOrder="0" pos="673 667 64 24" bgColOff="449bd2d7"
+              buttonText="reload" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <COMBOBOX name="new combo box" id="928ba4ac78f00590" memberName="loadmulcomboBox"
+            virtualName="" explicitFocusOrder="0" pos="385 699 280 24" editable="1"
+            layout="33" items="" textWhenNonSelected="(choose a soundfile)"
             textWhenNoItems="(choose a soundfile)"/>
-  <TEXTBUTTON name="new button" memberName="phaseampbutton" pos="593 667 72 24"
-              bgColOff="4bd8530a" bgColOn="4284ff44" buttonText="Phase/Amp"
-              connectedEdges="1" needsCallback="1"/>
-  <SLIDER name="new slider" memberName="durationdoublingslider" pos="153 667 148 24"
-          tooltip="You may select a number of duration doublings in order to zero-pad your sound to progressively higher powers of 2. This may be useful to increase the duration of silence at the end of a sound. Some transforms may insert interesting sound in this region. You will have to run a new analysis after this value has been changed. CAREFUL! A duration doubling of 3 means that your sound will get 8 times longer. Processing time will increase even more."
+  <TEXTBUTTON name="new button" id="9a0555d90935236c" memberName="phaseampbutton"
+              virtualName="" explicitFocusOrder="0" pos="593 667 72 24" bgColOff="4bd8530a"
+              bgColOn="4284ff44" buttonText="Phase/Amp" connectedEdges="1"
+              needsCallback="1" radioGroupId="0"/>
+  <SLIDER name="new slider" id="bd791b823de144f3" memberName="durationdoublingslider"
+          virtualName="" explicitFocusOrder="0" pos="153 667 148 24" tooltip="You may select a number of duration doublings in order to zero-pad your sound to progressively higher powers of 2. This may be useful to increase the duration of silence at the end of a sound. Some transforms may insert interesting sound in this region. You will have to run a new analysis after this value has been changed. CAREFUL! A duration doubling of 3 means that your sound will get 8 times longer. Processing time will increase even more."
           bkgcol="0" thumbcol="ffffffff" textboxbkgd="37ffffff" textboxhighlight="40421bdc"
           min="0" max="4" int="1" style="IncDecButtons" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="infotext" memberName="infotext" pos="32 216 800 64" bkgCol="0"
-         textCol="72000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="Start by loading and analyzing a soundfile" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="55.9" bold="0" italic="0" justification="33"/>
-  <SLIDER name="playprogress" memberName="playposslider" pos="168 612 256 24"
-          bkgcol="ffffff" thumbcol="23ebed9d" trackcol="58000000" textboxbkgd="14ffffff"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="infotext" id="bf17a9d4ba320afd" memberName="infotext" virtualName=""
+         explicitFocusOrder="0" pos="32 216 800 64" bkgCol="0" textCol="72000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Start by loading and analyzing a soundfile"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="55.9" bold="0" italic="0" justification="33"/>
+  <SLIDER name="playprogress" id="4a2265d1671ac765" memberName="playposslider"
+          virtualName="" explicitFocusOrder="0" pos="168 612 256 24" bkgcol="ffffff"
+          thumbcol="23ebed9d" trackcol="58000000" textboxbkgd="14ffffff"
           min="0" max="256" int="1" style="LinearBar" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="normalizebutton" pos="760 704 72 24"
-                tooltip="Also works when playing" buttonText="normalize" connectedEdges="0"
-                needsCallback="1" state="0"/>
-  <TEXTBUTTON name="new button" memberName="saveasbutton" pos="761 687 71 21"
-              bgColOff="6ac18400" buttonText="Save As" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="aboutbutton" memberName="aboutbutton" pos="664 604 80 22"
-              bgColOff="1fbbbbff" bgColOn="86a15f5f" textCol="c4000000" buttonText="About"
-              connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="prefsbutton" memberName="prefsbutton" pos="752 604 80 22"
-              bgColOff="1fbbbbff" bgColOn="86a15f5f" textCol="c4000000" buttonText="Prefs"
-              connectedEdges="0" needsCallback="1"/>
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="fa8af205cdf82110" memberName="normalizebutton"
+                virtualName="" explicitFocusOrder="0" pos="760 704 72 24" tooltip="Also works when playing"
+                buttonText="normalize" connectedEdges="0" needsCallback="1" radioGroupId="0"
+                state="0"/>
+  <TEXTBUTTON name="new button" id="5d2f2c218d0253fd" memberName="saveasbutton"
+              virtualName="" explicitFocusOrder="0" pos="761 687 71 21" bgColOff="6ac18400"
+              buttonText="Save As" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="aboutbutton" id="bb881735ea6671a5" memberName="aboutbutton"
+              virtualName="" explicitFocusOrder="0" pos="664 604 80 22" bgColOff="1fbbbbff"
+              bgColOn="86a15f5f" textCol="c4000000" buttonText="About" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="prefsbutton" id="989a479a4c4145fa" memberName="prefsbutton"
+              virtualName="" explicitFocusOrder="0" pos="752 604 80 22" bgColOff="1fbbbbff"
+              bgColOn="86a15f5f" textCol="c4000000" buttonText="Prefs" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
@@ -1409,7 +1464,7 @@ END_JUCER_METADATA
 //==============================================================================
 // Binary resources - be careful not to edit any of these sections!
 
-// JUCER_RESOURCE: temp_png, 6283, "/div/notam02/u2/kjetism/localdomain/newmammut/temp.png"
+// JUCER_RESOURCE: temp_png, 6283, "../../../../div/notam02/u2/kjetism/localdomain/newmammut/temp.png"
 static const unsigned char resource_Interface_temp_png[] = { 137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,1,246,0,0,0,117,8,6,0,0,0,188,184,195,126,0,0,0,6,98,75,71,68,0,255,0,255,0,255,160,189,167,
 147,0,0,0,9,112,72,89,115,0,0,11,19,0,0,11,19,1,0,154,156,24,0,0,0,7,116,73,77,69,7,215,2,15,19,53,42,134,166,211,72,0,0,0,29,116,69,88,116,67,111,109,109,101,110,116,0,67,114,101,97,116,101,100,32,119,
 105,116,104,32,84,104,101,32,71,73,77,80,239,100,37,110,0,0,23,239,73,68,65,84,120,218,237,157,121,140,93,213,125,199,63,119,236,241,50,222,176,7,131,177,97,12,134,177,141,193,30,76,217,113,18,194,210,

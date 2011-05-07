@@ -12,7 +12,7 @@
 static GraphComponent *graphcomponent;
 static Interface *interface;
 
-static Image *image=NULL;
+static Image* image=NULL;
 
 //extern ThreadWithProgressWindow das_mytask;
 
@@ -119,8 +119,8 @@ static void DrawImage(void){
   double real, imag, amp, maxamp=-1.;  
 
   Graphics g(*image);
-
-  image->clear(0,0,image->getWidth(),image->getHeight());
+  Rectangle<int> r(0,0,image->getWidth(),image->getHeight());
+  image->clear(r,Colours::black);
 
   drawscale(&g);
   
@@ -157,7 +157,7 @@ static void DrawImage(void){
 // Called from juce. (in graphcomponent.h)
 void BlitWin(Graphics *g){
   //printf("painting\n");
-  g->drawImageAt(image,0,0,false);
+  g->drawImageAt(*image,0,0,false);
   //printf("restoring\n");
 }
 

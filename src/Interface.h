@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  15 Feb 2007 8:59:08 pm
+  Creation date:  7 May 2011 4:10:17am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_INTERFACE_INTERFACE_1D53D4E6__
-#define __JUCER_HEADER_INTERFACE_INTERFACE_1D53D4E6__
+#ifndef __JUCER_HEADER_INTERFACE_INTERFACE_CBB37F1D__
+#define __JUCER_HEADER_INTERFACE_INTERFACE_CBB37F1D__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -65,7 +67,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
     void sliderValueChanged (Slider* sliderThatWasMoved);
     void comboBoxChanged (ComboBox* comboBoxThatHasChanged);
-    bool filesDropped (const StringArray& filenames, int mouseX, int mouseY);
+    void filesDropped (const StringArray& filenames, int mouseX, int mouseY);
     bool keyPressed (const KeyPress& key);
 
     // Binary resources:
@@ -80,9 +82,9 @@ private:
     GraphComponent *graphcomponent;
     ProgressBar *progressbar;
     FilenameComponent *loadcomponent;
-    Image* internalCachedImage3;
+    Image internalCachedImage3;
 #if 0
-    Image* tempimage;
+    Image tempimage;
 #endif
     Prefs *prefscomponent;
     double progress;
@@ -140,4 +142,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_INTERFACE_INTERFACE_1D53D4E6__
+#endif   // __JUCER_HEADER_INTERFACE_INTERFACE_CBB37F1D__

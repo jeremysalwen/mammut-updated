@@ -48,7 +48,8 @@ Zoom::Zoom ()
     zoomleft->addButtonListener (this);
     zoomleft->setColour (TextButton::buttonColourId, Colour (0x7bb46b1f));
     zoomleft->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    zoomleft->setColour (TextButton::textColourId, Colours::black);
+    zoomleft->setColour (TextButton::textColourOnId, Colours::black);
+    zoomleft->setColour (TextButton::textColourOffId, Colours::black);
 
     addAndMakeVisible (zoomright = new TextButton (T("Play")));
     zoomright->setButtonText (T(">"));
@@ -56,7 +57,8 @@ Zoom::Zoom ()
     zoomright->addButtonListener (this);
     zoomright->setColour (TextButton::buttonColourId, Colour (0x8fab6e38));
     zoomright->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    zoomright->setColour (TextButton::textColourId, Colours::black);
+    zoomright->setColour (TextButton::textColourOnId, Colours::black);
+    zoomright->setColour (TextButton::textColourOffId, Colours::black);
 
     setSize (600, 400);
 
