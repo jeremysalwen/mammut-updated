@@ -90,7 +90,7 @@ CC=$(GCC)
 
 ADDITIONALCFLAGS= -O2 -I/site/include -I/usr/local/include -DHAVE_JACK --fast-math  -D "NDEBUG=1"
 # -g -ggdb
-ADDITIONALLDFLAGS=-L/site/lib -L/usr/local/include -lsndfile -lm -lpthread -ldl -L. -ljack -lsamplerate
+ADDITIONALLDFLAGS=-L../../juce/Builds/Linux/build/ -L/usr/local/include -lsndfile -lm -lpthread -ldl -L. -ljack -lsamplerate -lrt
 # -L$(SOUNDLIBNAME)
 
 
@@ -109,7 +109,7 @@ LDFLAGS= $(ADDITIONALLDFLAGS)  -lvorbisfile
 CPPFLAGS := -MD -D "LINUX=1" -I "/usr/include" -I$(JUCE)  -DTEMPDIR=\"$(TEMPDIR)\" $(CFLAGS)
 CFLAGS	 += $(CPPFLAGS)
 CXXFLAGS := $(CFLAGS)
-LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -L "/usr/X11R6/lib/" -L "../../../bin" -L "../../juce/bin" -lfreetype -lpthread -lX11 -lXext -lGL  -lXinerama -lasound -ljuce_debug
+LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -L "/usr/X11R6/lib/" -lfreetype -lpthread -lX11 -lXext -lGL  -lXinerama -lasound -ljucedebug
 #_debug
 
 
