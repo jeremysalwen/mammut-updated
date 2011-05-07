@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  11 Feb 2007 11:30:46 pm
+  Creation date:  7 May 2011 2:31:05pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_PREFS_PREFS_4F2799EC__
-#define __JUCER_HEADER_PREFS_PREFS_4F2799EC__
+#ifndef __JUCER_HEADER_PREFS_PREFS_DB775993__
+#define __JUCER_HEADER_PREFS_PREFS_DB775993__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -75,4 +77,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_PREFS_PREFS_4F2799EC__
+#endif   // __JUCER_HEADER_PREFS_PREFS_DB775993__

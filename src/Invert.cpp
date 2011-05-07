@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 1:33:34 pm
+  Creation date:  7 May 2011 2:29:07pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "Invert.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Invert::Invert ()
@@ -67,12 +69,12 @@ Invert::Invert ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x35bbbbff));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -88,8 +90,12 @@ Invert::Invert ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -119,7 +125,10 @@ Invert::~Invert()
 //==============================================================================
 void Invert::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -201,30 +210,32 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="23693b1ebc276b65" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Invert" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Invert" textpos="33"/>
   <SLIDER name="new slider" id="c6ba53b86a9e0057" memberName="inversion_block_sizeslider"
-          pos="216 16 608 24" bkgcol="956565" thumbcol="80fffcfc" textboxbkgd="ffffff"
-          min="0" max="100" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="8449523003f6475c" memberName="label" pos="16 16 240 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Inversion block size (0-100%)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="216 16 608 24" bkgcol="956565"
+          thumbcol="80fffcfc" textboxbkgd="ffffff" min="0" max="100" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="8449523003f6475c" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 240 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Inversion block size (0-100%)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="661f8b102ed8bf39" memberName="textButton"
-              pos="8 48 152 56" bgColOff="40bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="8 48 152 56" bgColOff="40bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="2a8b2fac4eb289f9" memberName="resetbutton"
-              pos="320 48 150 24" bgColOff="35bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="3ef47dbd664df705" memberName="label2" pos="472 48 376 56"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Splits the spectrum into regions with specified size, and turns each of these backwards. If you select a region size of 100%, the entire spectrum will be mirrored around its center. Also, the result is complex conjugated to avoid reversal of the sound.&#10;&#10;"
+              virtualName="" explicitFocusOrder="0" pos="320 48 150 24" bgColOff="35bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="3ef47dbd664df705" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="472 48 376 56" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Splits the spectrum into regions with specified size, and turns each of these backwards. If you select a region size of 100%, the entire spectrum will be mirrored around its center. Also, the result is complex conjugated to avoid reversal of the sound.&#10;&#10;"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="10.7" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="160 48 152 56" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="160 48 152 56" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  12 Feb 2007 2:53:55 am
+  Creation date:  7 May 2011 2:30:50pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -23,10 +25,16 @@
 #include "PictureHolder.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 PictureHolder::PictureHolder ()
 {
+
+    //[UserPreSize]
+    //[/UserPreSize]
+
     setSize (600, 400);
 
     //[Constructor] You can add your own custom stuff here..
@@ -47,9 +55,12 @@ PictureHolder::~PictureHolder()
 //==============================================================================
 void PictureHolder::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colours::white);
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
@@ -87,7 +98,7 @@ END_JUCER_METADATA
 //==============================================================================
 // Binary resources - be careful not to edit any of these sections!
 
-// JUCER_RESOURCE: mammut_zerlegen3_jpg, 86361, "/div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-3.jpg"
+// JUCER_RESOURCE: mammut_zerlegen3_jpg, 86361, "../../../../div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-3.jpg"
 static const unsigned char resource_PictureHolder_mammut_zerlegen3_jpg[] = { 255,216,255,224,0,16,74,70,73,70,0,1,1,1,0,72,0,72,0,0,255,225,0,22,69,120,105,102,0,0,77,77,0,42,0,0,0,8,0,0,0,0,0,0,255,219,
 0,67,0,13,9,10,11,10,8,13,11,10,11,14,14,13,15,19,32,21,19,18,18,19,39,28,30,23,32,46,41,49,48,46,41,45,44,51,58,74,62,51,54,70,55,44,45,64,87,65,70,76,78,82,83,82,50,62,90,97,90,80,96,74,81,82,79,255,
 219,0,67,1,14,14,14,19,17,19,38,21,21,38,79,53,45,53,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,
@@ -1609,7 +1620,7 @@ static const unsigned char resource_PictureHolder_mammut_zerlegen3_jpg[] = { 255
 const char* PictureHolder::mammut_zerlegen3_jpg = (const char*) resource_PictureHolder_mammut_zerlegen3_jpg;
 const int PictureHolder::mammut_zerlegen3_jpgSize = 86361;
 
-// JUCER_RESOURCE: mammut_zerlegen2_jpg, 82415, "/div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-2.jpg"
+// JUCER_RESOURCE: mammut_zerlegen2_jpg, 82415, "../../../../div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-2.jpg"
 static const unsigned char resource_PictureHolder_mammut_zerlegen2_jpg[] = { 255,216,255,224,0,16,74,70,73,70,0,1,1,1,0,72,0,72,0,0,255,225,0,22,69,120,105,102,0,0,77,77,0,42,0,0,0,8,0,0,0,0,0,0,255,219,
 0,67,0,13,9,10,11,10,8,13,11,10,11,14,14,13,15,19,32,21,19,18,18,19,39,28,30,23,32,46,41,49,48,46,41,45,44,51,58,74,62,51,54,70,55,44,45,64,87,65,70,76,78,82,83,82,50,62,90,97,90,80,96,74,81,82,79,255,
 219,0,67,1,14,14,14,19,17,19,38,21,21,38,79,53,45,53,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,
@@ -3063,7 +3074,7 @@ static const unsigned char resource_PictureHolder_mammut_zerlegen2_jpg[] = { 255
 const char* PictureHolder::mammut_zerlegen2_jpg = (const char*) resource_PictureHolder_mammut_zerlegen2_jpg;
 const int PictureHolder::mammut_zerlegen2_jpgSize = 82415;
 
-// JUCER_RESOURCE: mammut_zerlegen4_jpg, 81239, "/div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-4.jpg"
+// JUCER_RESOURCE: mammut_zerlegen4_jpg, 81239, "../../../../div/notam02/u2/kjetism/localdomain/newmammut_old/Mammut_zerlegen-4.jpg"
 static const unsigned char resource_PictureHolder_mammut_zerlegen4_jpg[] = { 255,216,255,224,0,16,74,70,73,70,0,1,1,1,0,72,0,72,0,0,255,225,0,22,69,120,105,102,0,0,77,77,0,42,0,0,0,8,0,0,0,0,0,0,255,219,
 0,67,0,13,9,10,11,10,8,13,11,10,11,14,14,13,15,19,32,21,19,18,18,19,39,28,30,23,32,46,41,49,48,46,41,45,44,51,58,74,62,51,54,70,55,44,45,64,87,65,70,76,78,82,83,82,50,62,90,97,90,80,96,74,81,82,79,255,
 219,0,67,1,14,14,14,19,17,19,38,21,21,38,79,53,45,53,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,

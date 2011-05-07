@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  28 Jan 2007 11:31:33 pm
+  Creation date:  7 May 2011 2:29:01pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -55,7 +57,7 @@ class DasTabbedComponent  : public TabbedComponent
 #define TabbedComponent DasTabbedComponent
 //[/Headers]
 
-#include "Interface.h"
+#include "Interface_old.h"
 #include "Stretch.h"
 #include "Wobble.h"
 #include "MultiplyPhase.h"
@@ -75,6 +77,8 @@ class DasTabbedComponent  : public TabbedComponent
 #include "Zoom.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Interface::Interface ()
@@ -110,7 +114,7 @@ Interface::Interface ()
       normalizebutton (0),
       saveasbutton (0),
       aboutbutton (0),
-      internalCachedImage3 (0)
+      cachedImage_mammut_zerlegentmp_jpg (0)
 {
     addAndMakeVisible (groupComponent5 = new GroupComponent (T("new group"),
                                                              T("About")));
@@ -136,10 +140,10 @@ Interface::Interface ()
 
     addAndMakeVisible (stopbutton = new TextButton (T("Play")));
     stopbutton->setButtonText (T("Stop"));
-    stopbutton->addButtonListener (this);
+    stopbutton->addListener (this);
     stopbutton->setColour (TextButton::buttonColourId, Colour (0x5cabba2a));
     stopbutton->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    stopbutton->setColour (TextButton::textColourId, Colours::black);
+    stopbutton->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (tabbedComponent = new TabbedComponent (TabbedButtonBar::TabsAtTop));
     tabbedComponent->setTabBarDepth (20);
@@ -201,48 +205,49 @@ Interface::Interface ()
     addAndMakeVisible (correlatebutton = new TextButton (T("new button")));
     correlatebutton->setButtonText (T("Correlate"));
     correlatebutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    correlatebutton->addButtonListener (this);
+    correlatebutton->addListener (this);
     correlatebutton->setColour (TextButton::buttonColourId, Colour (0x88b26134));
     correlatebutton->setColour (TextButton::buttonOnColourId, Colour (0x371ed220));
 
     addAndMakeVisible (funbutton = new TextButton (T("new button")));
     funbutton->setButtonText (T("Fun"));
     funbutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    funbutton->addButtonListener (this);
+    funbutton->addListener (this);
     funbutton->setColour (TextButton::buttonColourId, Colour (0x8ab26134));
     funbutton->setColour (TextButton::buttonOnColourId, Colour (0x3b6eff44));
 
     addAndMakeVisible (abbutton = new TextButton (T("new button")));
     abbutton->setButtonText (T("A^B"));
     abbutton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    abbutton->addButtonListener (this);
+    abbutton->addListener (this);
     abbutton->setColour (TextButton::buttonColourId, Colour (0x8ab26135));
     abbutton->setColour (TextButton::buttonOnColourId, Colour (0x3944ff64));
 
     addAndMakeVisible (hyperlinkButton = new HyperlinkButton (T("http://www.notam02.no"),
                                                               URL (T("http://www.notam02.no"))));
     hyperlinkButton->setTooltip (T("http://www.notam02.no"));
+    hyperlinkButton->setButtonText (T("http://www.notam02.no"));
     hyperlinkButton->setColour (HyperlinkButton::textColourId, Colour (0x930004ff));
 
     addAndMakeVisible (savebutton = new TextButton (T("new button")));
     savebutton->setButtonText (T("Save"));
-    savebutton->addButtonListener (this);
+    savebutton->addListener (this);
     savebutton->setColour (TextButton::buttonColourId, Colour (0x6ed58d00));
 
     addAndMakeVisible (playbutton = new TextButton (T("Play")));
     playbutton->setButtonText (T("Start"));
-    playbutton->addButtonListener (this);
+    playbutton->addListener (this);
     playbutton->setColour (TextButton::buttonColourId, Colour (0x7da9a335));
-    playbutton->setColour (TextButton::textColourId, Colours::black);
+    playbutton->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (loadbrowse = new TextButton (T("new button")));
     loadbrowse->setButtonText (T("browse"));
-    loadbrowse->addButtonListener (this);
+    loadbrowse->addListener (this);
     loadbrowse->setColour (TextButton::buttonColourId, Colour (0x469bd243));
 
     addAndMakeVisible (loadmulbrowse = new TextButton (T("new button")));
     loadmulbrowse->setButtonText (T("browse"));
-    loadmulbrowse->addButtonListener (this);
+    loadmulbrowse->addListener (this);
     loadmulbrowse->setColour (TextButton::buttonColourId, Colour (0x449bd2d7));
 
     addAndMakeVisible (loadcomboBox = new ComboBox (T("new combo box")));
@@ -254,19 +259,19 @@ Interface::Interface ()
 
     addAndMakeVisible (reload = new TextButton (T("new button")));
     reload->setButtonText (T("reload"));
-    reload->addButtonListener (this);
+    reload->addListener (this);
     reload->setColour (TextButton::buttonColourId, Colour (0x449bd243));
 
     addAndMakeVisible (convolvebutton = new TextButton (T("new button")));
     convolvebutton->setButtonText (T("Convolve"));
     convolvebutton->setConnectedEdges (Button::ConnectedOnRight);
-    convolvebutton->addButtonListener (this);
+    convolvebutton->addListener (this);
     convolvebutton->setColour (TextButton::buttonColourId, Colour (0x8aa64f15));
     convolvebutton->setColour (TextButton::buttonOnColourId, Colour (0x3b66ff44));
 
     addAndMakeVisible (reloadmul = new TextButton (T("new button")));
     reloadmul->setButtonText (T("reload"));
-    reloadmul->addButtonListener (this);
+    reloadmul->addListener (this);
     reloadmul->setColour (TextButton::buttonColourId, Colour (0x449bd2d7));
 
     addAndMakeVisible (loadmulcomboBox = new ComboBox (T("new combo box")));
@@ -279,7 +284,7 @@ Interface::Interface ()
     addAndMakeVisible (phaseampbutton = new TextButton (T("new button")));
     phaseampbutton->setButtonText (T("Phase/Amp"));
     phaseampbutton->setConnectedEdges (Button::ConnectedOnLeft);
-    phaseampbutton->addButtonListener (this);
+    phaseampbutton->addListener (this);
     phaseampbutton->setColour (TextButton::buttonColourId, Colour (0x4bd8530a));
     phaseampbutton->setColour (TextButton::buttonOnColourId, Colour (0x4284ff44));
 
@@ -317,21 +322,25 @@ Interface::Interface ()
     addAndMakeVisible (normalizebutton = new ToggleButton (T("new toggle button")));
     normalizebutton->setTooltip (T("Also works for playing"));
     normalizebutton->setButtonText (T("normalize"));
-    normalizebutton->addButtonListener (this);
+    normalizebutton->addListener (this);
 
     addAndMakeVisible (saveasbutton = new TextButton (T("new button")));
     saveasbutton->setButtonText (T("Save As"));
-    saveasbutton->addButtonListener (this);
+    saveasbutton->addListener (this);
     saveasbutton->setColour (TextButton::buttonColourId, Colour (0x6ac18400));
 
     addAndMakeVisible (aboutbutton = new TextButton (T("aboutbutton")));
     aboutbutton->setButtonText (T("Mammut is a product of Notam"));
-    aboutbutton->addButtonListener (this);
+    aboutbutton->addListener (this);
     aboutbutton->setColour (TextButton::buttonColourId, Colour (0x1fbbbbff));
     aboutbutton->setColour (TextButton::buttonOnColourId, Colour (0x86a15f5f));
-    aboutbutton->setColour (TextButton::textColourId, Colour (0xc4000000));
+    aboutbutton->setColour (TextButton::textColourOnId, Colour (0xc4000000));
 
-    internalCachedImage3 = ImageCache::getFromMemory (mammut_zerlegentmp_jpg, mammut_zerlegentmp_jpgSize);
+    cachedImage_mammut_zerlegentmp_jpg = ImageCache::getFromMemory (mammut_zerlegentmp_jpg, mammut_zerlegentmp_jpgSize);
+
+    //[UserPreSize]
+    //[/UserPreSize]
+
     setSize (900, 800);
 
     //[Constructor] You can add your own custom stuff here..
@@ -441,7 +450,6 @@ Interface::~Interface()
     deleteAndZero (normalizebutton);
     deleteAndZero (saveasbutton);
     deleteAndZero (aboutbutton);
-    ImageCache::release (internalCachedImage3);
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]
@@ -450,6 +458,9 @@ Interface::~Interface()
 //==============================================================================
 void Interface::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colour (0xffddf1ee));
 
     g.setColour (Colours::black);
@@ -458,47 +469,34 @@ void Interface::paint (Graphics& g)
                 408, 312, 200, 30,
                 Justification::centred, true);
 
-    GradientBrush gradient_1 (Colours::red,
-                              50.0f, 50.0f,
-                              Colours::green,
-                              744.0f, 576.0f,
-                              false);
-    g.setBrush (&gradient_1);
+    g.setGradientFill (ColourGradient (Colours::red,
+                                       50.0f, 50.0f,
+                                       Colours::green,
+                                       744.0f, 576.0f,
+                                       false));
     g.fillRoundedRectangle (0.0f, 448.0f, 960.0f, 384.0f, 21.5000f);
 
-    GradientBrush gradient_2 (Colour (0x7bf98f33),
-                              664.0f, 40.0f,
-                              Colour (0xd78c8c8c),
-                              720.0f, 560.0f,
-                              false);
-    g.setBrush (&gradient_2);
+    g.setGradientFill (ColourGradient (Colour (0x7bf98f33),
+                                       664.0f, 40.0f,
+                                       Colour (0xd78c8c8c),
+                                       720.0f, 560.0f,
+                                       false));
     g.fillRect (-8, -24, 976, 864);
 
     g.setColour (Colours::black.withAlpha (0.2700f));
-#if 1
-#if 0
-    g.drawImage(internalCachedImage3,
-		0, 0, 872, 738,
-		pic_x,pic_y,pic_width,pic_height,
-		false);
-#endif
-#else
-    g.drawImageWithin (internalCachedImage3,
+    g.drawImageWithin (cachedImage_mammut_zerlegentmp_jpg,
                        0, 0, 872, 738,
                        RectanglePlacement::centred,
                        false);
-#endif
-#if 1
-    GradientBrush gradient_4 (Colour (0x219d2323),
-                              16.0f, 736.0f,
-                              Colour (0x5f0f1615),
-                              696.0f, 752.0f,
-                              true);
-    g.setBrush (&gradient_4);
-    g.fillRoundedRectangle (0.0f, 584.0f, 960.0f, 304.0f, 21.5000f);
-#endif
 
-    //[UserPaint] Add your own custom paint stuff here..
+    g.setGradientFill (ColourGradient (Colour (0x219d2323),
+                                       16.0f, 736.0f,
+                                       Colour (0x5f0f1615),
+                                       696.0f, 752.0f,
+                                       true));
+    g.fillRoundedRectangle (0.0f, 584.0f, 960.0f, 304.0f, 21.5000f);
+
+    //[UserPaint] Add your own custom painting code here..
 #if 1
     g.drawImage(internalCachedImage3,
 		0, 0, 872, 738,
@@ -566,6 +564,9 @@ void Interface::resized()
 
 void Interface::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == stopbutton)
     {
         //[UserButtonCode_stopbutton] -- add your button handler code here..
@@ -734,10 +735,16 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 					 "Send your comments to k.s.matheussen@notam02.no.\n"));
         //[/UserButtonCode_aboutbutton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 void Interface::sliderValueChanged (Slider* sliderThatWasMoved)
 {
+    //[UsersliderValueChanged_Pre]
+    //[/UsersliderValueChanged_Pre]
+
     if (sliderThatWasMoved == undoredoinc)
     {
         //[UserSliderCode_undoredoinc] -- add your slider handling code here..
@@ -785,10 +792,16 @@ void Interface::sliderValueChanged (Slider* sliderThatWasMoved)
       jp_playpos=N*playposslider->getValue()/1000.0f;
         //[/UserSliderCode_playposslider]
     }
+
+    //[UsersliderValueChanged_Post]
+    //[/UsersliderValueChanged_Post]
 }
 
 void Interface::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
 {
+    //[UsercomboBoxChanged_Pre]
+    //[/UsercomboBoxChanged_Pre]
+
     if (comboBoxThatHasChanged == loadcomboBox)
     {
         //[UserComboBoxCode_loadcomboBox] -- add your combo box handling code here..
@@ -841,6 +854,9 @@ void Interface::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
 
         //[/UserComboBoxCode_loadmulcomboBox]
     }
+
+    //[UsercomboBoxChanged_Post]
+    //[/UsercomboBoxChanged_Post]
 }
 
 
@@ -941,7 +957,7 @@ void Interface::timerCallback(){
 
   static int nexttime2=0;
   if(time>=nexttime2){
-    const int addval=1;    
+    const int addval=1;
     int newpic_x=pic_x+random->nextInt(2*addval+1)-addval;
     if(newpic_x<0)newpic_x=0;
     if(newpic_x>200)newpic_x=200;
@@ -1027,21 +1043,28 @@ BEGIN_JUCER_METADATA
     <ROUNDRECT pos="0 584 960 304" cornerSize="21.5" fill=" radial: 16 736, 696 752, 0=219d2323, 1=5f0f1615"
                hasStroke="0"/>
   </BACKGROUND>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent5" pos="649 587 200 64"
-                  outlinecol="b0000000" title="About"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent4" pos="745 651 104 80"
-                  outlinecol="b0000000" title="Save"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent3" pos="9 587 424 64"
-                  outlinecol="b2000000" textcol="ff000000" title="Play"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent1" pos="9 651 368 80"
-                  outlinecol="b2000000" textcol="ff000000" title="Load &amp; Analyze"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent" pos="433 587 216 64"
-                  outlinecol="b2000000" title="Undo/Redo"/>
-  <TEXTBUTTON name="Play" memberName="stopbutton" pos="87 604 71 40" bgColOff="5cabba2a"
+  <GROUPCOMPONENT name="new group" id="a7ab2cf3ad50ed18" memberName="groupComponent5"
+                  virtualName="" explicitFocusOrder="0" pos="649 587 200 64" outlinecol="b0000000"
+                  title="About"/>
+  <GROUPCOMPONENT name="new group" id="303ed0bbe25fd935" memberName="groupComponent4"
+                  virtualName="" explicitFocusOrder="0" pos="745 651 104 80" outlinecol="b0000000"
+                  title="Save"/>
+  <GROUPCOMPONENT name="new group" id="d1c5fb437faff713" memberName="groupComponent3"
+                  virtualName="" explicitFocusOrder="0" pos="9 587 424 64" outlinecol="b2000000"
+                  textcol="ff000000" title="Play"/>
+  <GROUPCOMPONENT name="new group" id="55f22f3f69c3d2c7" memberName="groupComponent1"
+                  virtualName="" explicitFocusOrder="0" pos="9 651 368 80" outlinecol="b2000000"
+                  textcol="ff000000" title="Load &amp; Analyze"/>
+  <GROUPCOMPONENT name="new group" id="a1d7cdebc1f61cf" memberName="groupComponent"
+                  virtualName="" explicitFocusOrder="0" pos="433 587 216 64" outlinecol="b2000000"
+                  title="Undo/Redo"/>
+  <TEXTBUTTON name="Play" id="3585ad9a0b8785a" memberName="stopbutton" virtualName=""
+              explicitFocusOrder="0" pos="87 604 71 40" bgColOff="5cabba2a"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Stop" connectedEdges="0"
-              needsCallback="1"/>
-  <TABBEDCOMPONENT name="new tabbed component" memberName="tabbedComponent" pos="7 450 848 136"
-                   orientation="top" tabBarDepth="20" initialTab="0">
+              needsCallback="1" radioGroupId="0"/>
+  <TABBEDCOMPONENT name="new tabbed component" id="6f0e16095a77a04a" memberName="tabbedComponent"
+                   virtualName="" explicitFocusOrder="0" pos="7 450 848 136" orientation="top"
+                   tabBarDepth="20" initialTab="0">
     <TAB name="Stretch" colour="3bf8f4c6" useJucerComp="1" contentClassName="Tabtest"
          constructorParams="" jucerComponentFile="Stretch.cpp"/>
     <TAB name="Wobble" colour="95e0cce6" useJucerComp="1" contentClassName=""
@@ -1064,8 +1087,8 @@ BEGIN_JUCER_METADATA
          constructorParams="" jucerComponentFile="Mirror.cpp"/>
     <TAB name="Keep Peaks" colour="84f7e1e1" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="KeepPeaks.cpp"/>
-    <TAB name="Amplitude-&gt;Phase" colour="82e5f8e3" useJucerComp="1" contentClassName=""
-         constructorParams="" jucerComponentFile="AmplitudeToPhase.cpp"/>
+    <TAB name="Amplitude-&gt;Phase" colour="82e5f8e3" useJucerComp="1"
+         contentClassName="" constructorParams="" jucerComponentFile="AmplitudeToPhase.cpp"/>
     <TAB name="Gain" colour="6ef1f2d1" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="Gain.cpp"/>
     <TAB name="CombSplit" colour="7bc4ffef" useJucerComp="1" contentClassName=""
@@ -1077,78 +1100,102 @@ BEGIN_JUCER_METADATA
     <TAB name="Zoom" colour="b0f5f5dc" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="Zoom.cpp"/>
   </TABBEDCOMPONENT>
-  <SLIDER name="new slider" memberName="undoredoinc" pos="449 611 56 24"
-          bkgcol="0" thumbcol="ff000000" trackcol="79000000" textboxtext="ff000000"
+  <SLIDER name="new slider" id="59aeac82702268bc" memberName="undoredoinc"
+          virtualName="" explicitFocusOrder="0" pos="449 611 56 24" bkgcol="0"
+          thumbcol="ff000000" trackcol="79000000" textboxtext="ff000000"
           textboxbkgd="ffffffff" textboxhighlight="401a1aa8" min="0" max="5"
           int="1" style="IncDecButtons" textBoxPos="NoTextBox" textBoxEditable="0"
-          textBoxWidth="80" textBoxHeight="20"/>
-  <SLIDER name="new slider" memberName="undoredoslider" pos="513 611 120 24"
-          bkgcol="5ce5f4f5" thumbcol="5c8d8f92" textboxbkgd="ffffffff"
-          min="0" max="0" int="1" style="LinearBar" textBoxPos="TextBoxAbove"
-          textBoxEditable="0" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" memberName="label" pos="17 667 160 24" bkgCol="0"
-         textCol="ff000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="Duration Doubling" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
-         bold="0" italic="0" justification="33"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent2" pos="377 651 368 80"
-                  outlinecol="b4000000" title="Load &amp; Multiply"/>
-  <TEXTBUTTON name="new button" memberName="correlatebutton" pos="441 667 56 24"
-              bgColOff="88b26134" bgColOn="371ed220" buttonText="Correlate"
-              connectedEdges="3" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="funbutton" pos="497 667 48 24"
-              bgColOff="8ab26134" bgColOn="3b6eff44" buttonText="Fun" connectedEdges="3"
-              needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="abbutton" pos="545 667 48 24" bgColOff="8ab26135"
-              bgColOn="3944ff64" buttonText="A&#94;B" connectedEdges="3" needsCallback="1"/>
-  <HYPERLINKBUTTON name="new hyperlink" memberName="hyperlinkButton" pos="653 623 190 22"
-                   tooltip="http://www.notam02.no" textCol="930004ff" buttonText="http://www.notam02.no"
-                   connectedEdges="0" needsCallback="0" url="http://www.notam02.no"/>
-  <TEXTBUTTON name="new button" memberName="savebutton" pos="761 667 72 20"
-              bgColOff="6ed58d00" buttonText="Save" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="playbutton" pos="17 603 71 40" bgColOff="7da9a335"
-              textCol="ff000000" buttonText="Start" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="loadbrowse" pos="305 699 64 24"
-              bgColOff="469bd243" buttonText="browse" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="loadmulbrowse" pos="673 699 64 24"
-              bgColOff="449bd2d7" buttonText="browse" connectedEdges="0" needsCallback="1"/>
-  <COMBOBOX name="new combo box" memberName="loadcomboBox" pos="17 699 280 24"
-            editable="1" layout="33" items="" textWhenNonSelected="(choose a soundfile)"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <SLIDER name="new slider" id="75247741f71d561d" memberName="undoredoslider"
+          virtualName="" explicitFocusOrder="0" pos="513 611 120 24" bkgcol="5ce5f4f5"
+          thumbcol="5c8d8f92" textboxbkgd="ffffffff" min="0" max="0" int="1"
+          style="LinearBar" textBoxPos="TextBoxAbove" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="7053ddf2b2c42e15" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="17 667 160 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Duration Doubling"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
+  <GROUPCOMPONENT name="new group" id="477d825b78e43fcc" memberName="groupComponent2"
+                  virtualName="" explicitFocusOrder="0" pos="377 651 368 80" outlinecol="b4000000"
+                  title="Load &amp; Multiply"/>
+  <TEXTBUTTON name="new button" id="d8906d664be2d05b" memberName="correlatebutton"
+              virtualName="" explicitFocusOrder="0" pos="441 667 56 24" bgColOff="88b26134"
+              bgColOn="371ed220" buttonText="Correlate" connectedEdges="3"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="e25cddec43c7cc5f" memberName="funbutton"
+              virtualName="" explicitFocusOrder="0" pos="497 667 48 24" bgColOff="8ab26134"
+              bgColOn="3b6eff44" buttonText="Fun" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="fc9af9a4d27c9b0b" memberName="abbutton"
+              virtualName="" explicitFocusOrder="0" pos="545 667 48 24" bgColOff="8ab26135"
+              bgColOn="3944ff64" buttonText="A&#94;B" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
+  <HYPERLINKBUTTON name="new hyperlink" id="890edaea499b3c31" memberName="hyperlinkButton"
+                   virtualName="" explicitFocusOrder="0" pos="653 623 190 22" tooltip="http://www.notam02.no"
+                   textCol="930004ff" buttonText="http://www.notam02.no" connectedEdges="0"
+                   needsCallback="0" radioGroupId="0" url="http://www.notam02.no"/>
+  <TEXTBUTTON name="new button" id="b9b7da3cea3a0a15" memberName="savebutton"
+              virtualName="" explicitFocusOrder="0" pos="761 667 72 20" bgColOff="6ed58d00"
+              buttonText="Save" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="22509093599c5907" memberName="playbutton" virtualName=""
+              explicitFocusOrder="0" pos="17 603 71 40" bgColOff="7da9a335"
+              textCol="ff000000" buttonText="Start" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="1d83780fb94c1217" memberName="loadbrowse"
+              virtualName="" explicitFocusOrder="0" pos="305 699 64 24" bgColOff="469bd243"
+              buttonText="browse" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="c4c3528dcaf11b64" memberName="loadmulbrowse"
+              virtualName="" explicitFocusOrder="0" pos="673 699 64 24" bgColOff="449bd2d7"
+              buttonText="browse" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <COMBOBOX name="new combo box" id="216b2a15cdea37ce" memberName="loadcomboBox"
+            virtualName="" explicitFocusOrder="0" pos="17 699 280 24" editable="1"
+            layout="33" items="" textWhenNonSelected="(choose a soundfile)"
             textWhenNoItems="(choose a soundfile)"/>
-  <TEXTBUTTON name="new button" memberName="reload" pos="305 667 64 24" bgColOff="449bd243"
-              buttonText="reload" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="convolvebutton" pos="385 667 56 24"
-              bgColOff="8aa64f15" bgColOn="3b66ff44" buttonText="Convolve"
-              connectedEdges="2" needsCallback="1"/>
-  <TEXTBUTTON name="new button" memberName="reloadmul" pos="673 667 64 24"
-              bgColOff="449bd2d7" buttonText="reload" connectedEdges="0" needsCallback="1"/>
-  <COMBOBOX name="new combo box" memberName="loadmulcomboBox" pos="385 699 280 24"
-            editable="1" layout="33" items="" textWhenNonSelected="(choose a soundfile)"
+  <TEXTBUTTON name="new button" id="ed9ee54ee5c9d11a" memberName="reload" virtualName=""
+              explicitFocusOrder="0" pos="305 667 64 24" bgColOff="449bd243"
+              buttonText="reload" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="5509a5a1a562ac8" memberName="convolvebutton"
+              virtualName="" explicitFocusOrder="0" pos="385 667 56 24" bgColOff="8aa64f15"
+              bgColOn="3b66ff44" buttonText="Convolve" connectedEdges="2" needsCallback="1"
+              radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="c12814bdf8669924" memberName="reloadmul"
+              virtualName="" explicitFocusOrder="0" pos="673 667 64 24" bgColOff="449bd2d7"
+              buttonText="reload" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <COMBOBOX name="new combo box" id="2f8ff7484a71d75e" memberName="loadmulcomboBox"
+            virtualName="" explicitFocusOrder="0" pos="385 699 280 24" editable="1"
+            layout="33" items="" textWhenNonSelected="(choose a soundfile)"
             textWhenNoItems="(choose a soundfile)"/>
-  <TEXTBUTTON name="new button" memberName="phaseampbutton" pos="593 667 72 24"
-              bgColOff="4bd8530a" bgColOn="4284ff44" buttonText="Phase/Amp"
-              connectedEdges="1" needsCallback="1"/>
-  <SLIDER name="new slider" memberName="durationdoublingslider" pos="153 667 144 24"
-          bkgcol="0" thumbcol="ffffffff" textboxbkgd="37ffffff" textboxhighlight="40421bdc"
+  <TEXTBUTTON name="new button" id="74a7911999d848b3" memberName="phaseampbutton"
+              virtualName="" explicitFocusOrder="0" pos="593 667 72 24" bgColOff="4bd8530a"
+              bgColOn="4284ff44" buttonText="Phase/Amp" connectedEdges="1"
+              needsCallback="1" radioGroupId="0"/>
+  <SLIDER name="new slider" id="6d61752ca55023e1" memberName="durationdoublingslider"
+          virtualName="" explicitFocusOrder="0" pos="153 667 144 24" bkgcol="0"
+          thumbcol="ffffffff" textboxbkgd="37ffffff" textboxhighlight="40421bdc"
           min="0" max="4" int="1" style="IncDecButtons" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="infotext" memberName="infotext" pos="32 216 800 64" bkgCol="0"
-         textCol="72000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="Start by loading and analyzing a soundfile" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="55.9" bold="0" italic="0" justification="33"/>
-  <SLIDER name="playprogress" memberName="playposslider" pos="168 612 256 24"
-          bkgcol="ffffff" thumbcol="23ebed9d" trackcol="58000000" textboxbkgd="14ffffff"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="infotext" id="e6f7361a59420d86" memberName="infotext" virtualName=""
+         explicitFocusOrder="0" pos="32 216 800 64" bkgCol="0" textCol="72000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Start by loading and analyzing a soundfile"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="55.9" bold="0" italic="0" justification="33"/>
+  <SLIDER name="playprogress" id="712e3f26ef7cd13" memberName="playposslider"
+          virtualName="" explicitFocusOrder="0" pos="168 612 256 24" bkgcol="ffffff"
+          thumbcol="23ebed9d" trackcol="58000000" textboxbkgd="14ffffff"
           min="0" max="1000" int="0" style="LinearBar" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="normalizebutton" pos="760 704 72 24"
-                tooltip="Also works for playing" buttonText="normalize" connectedEdges="0"
-                needsCallback="1" state="0"/>
-  <TEXTBUTTON name="new button" memberName="saveasbutton" pos="761 687 71 21"
-              bgColOff="6ac18400" buttonText="Save As" connectedEdges="0" needsCallback="1"/>
-  <TEXTBUTTON name="aboutbutton" memberName="aboutbutton" pos="664 600 168 26"
-              bgColOff="1fbbbbff" bgColOn="86a15f5f" textCol="c4000000" buttonText="Mammut is a product of Notam"
-              connectedEdges="0" needsCallback="1"/>
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="257a2055aee2617e" memberName="normalizebutton"
+                virtualName="" explicitFocusOrder="0" pos="760 704 72 24" tooltip="Also works for playing"
+                buttonText="normalize" connectedEdges="0" needsCallback="1" radioGroupId="0"
+                state="0"/>
+  <TEXTBUTTON name="new button" id="501e5d33861315d9" memberName="saveasbutton"
+              virtualName="" explicitFocusOrder="0" pos="761 687 71 21" bgColOff="6ac18400"
+              buttonText="Save As" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="aboutbutton" id="79b634e4f97f2371" memberName="aboutbutton"
+              virtualName="" explicitFocusOrder="0" pos="664 600 168 26" bgColOff="1fbbbbff"
+              bgColOn="86a15f5f" textCol="c4000000" buttonText="Mammut is a product of Notam"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
@@ -1158,7 +1205,7 @@ END_JUCER_METADATA
 //==============================================================================
 // Binary resources - be careful not to edit any of these sections!
 
-// JUCER_RESOURCE: mammut_zerlegentmp_jpg, 23648, "/div/notam02/u2/kjetism/localdomain/newmammut/Mammut_zerlegen-tmp.jpg"
+// JUCER_RESOURCE: mammut_zerlegentmp_jpg, 23648, "../../../../div/notam02/u2/kjetism/localdomain/newmammut/Mammut_zerlegen-tmp.jpg"
 static const unsigned char resource_Interface_mammut_zerlegentmp_jpg[] = { 255,216,255,224,0,16,74,70,73,70,0,1,1,1,0,72,0,72,0,0,255,225,0,22,69,120,105,102,0,0,77,77,0,42,0,0,0,8,0,0,0,0,0,0,255,219,
 0,67,0,67,46,50,58,50,42,67,58,54,58,75,71,67,79,100,166,108,100,92,92,100,204,146,154,121,166,241,212,254,250,237,212,233,229,255,255,255,255,255,255,255,255,229,233,255,255,255,255,255,255,255,255,255,
 255,255,255,255,255,255,255,255,255,255,255,255,219,0,67,1,71,75,75,100,87,100,196,108,108,196,255,255,233,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,

@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:58:55 pm
+  Creation date:  7 May 2011 2:27:31pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "BlockSwap.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 BlockSwap::BlockSwap ()
@@ -70,12 +72,12 @@ BlockSwap::BlockSwap ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x39bbbbff));
 
     addAndMakeVisible (toggleButton = new ToggleButton (T("new toggle button")));
     toggleButton->setButtonText (T("Old version with error"));
-    toggleButton->addButtonListener (this);
+    toggleButton->addListener (this);
 
     addAndMakeVisible (block_sizeslider = new Slider (T("new slider")));
     block_sizeslider->setRange (0, 100, 0);
@@ -99,7 +101,7 @@ BlockSwap::BlockSwap ()
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x4fbbbbff));
 
     addAndMakeVisible (label3 = new Label (T("new label"),
@@ -115,8 +117,12 @@ BlockSwap::BlockSwap ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -149,7 +155,10 @@ BlockSwap::~BlockSwap()
 //==============================================================================
 void BlockSwap::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -248,42 +257,45 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="eb1aec589fcc903" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Block Swap" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Block Swap" textpos="33"/>
   <SLIDER name="new slider" id="e0fb83e1b09279aa" memberName="number_of_swapsslider"
-          pos="160 16 344 24" bkgcol="956565" thumbcol="82fffcfc" textboxbkgd="ffffff"
-          min="0" max="10000" int="1" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="c855b39e5875a879" memberName="label" pos="16 16 152 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Number of swaps" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="160 16 344 24" bkgcol="956565"
+          thumbcol="82fffcfc" textboxbkgd="ffffff" min="0" max="10000"
+          int="1" style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="c855b39e5875a879" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 152 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Number of swaps"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="5f102c2d9581a667" memberName="textButton"
-              pos="184 72 176 24" bgColOff="39bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="184 72 176 24" bgColOff="39bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="new toggle button" id="e547cfcd0d96c77c" memberName="toggleButton"
-                pos="16 72 208 24" buttonText="Old version with error" connectedEdges="0"
-                needsCallback="1" state="0"/>
+                virtualName="" explicitFocusOrder="0" pos="16 72 208 24" buttonText="Old version with error"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <SLIDER name="new slider" id="ce157ef27c1fc2c7" memberName="block_sizeslider"
-          pos="160 40 344 24" bkgcol="956565" thumbcol="28ffffff" textboxbkgd="ffffff"
-          min="0" max="100" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="9ab080a3e81b0c5" memberName="label2" pos="16 40 152 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Block size (0-100%)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="160 40 344 24" bkgcol="956565"
+          thumbcol="28ffffff" textboxbkgd="ffffff" min="0" max="100" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="9ab080a3e81b0c5" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="16 40 152 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Block size (0-100%)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="resetbutton" id="f3db135c91577023" memberName="resetbutton"
-              pos="432 72 64 24" bgColOff="4fbbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="cf3b98cb38797efd" memberName="label3" pos="520 16 296 88"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Selects randomly positioned regions of the spectrum, and interchanges their halves. The Block size parameter sets the size of the blocks, given in percents of the whole frequency axis. This procedure is repeated a number of times, as specified, thus permutating the partials."
+              virtualName="" explicitFocusOrder="0" pos="432 72 64 24" bgColOff="4fbbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="cf3b98cb38797efd" memberName="label3" virtualName=""
+         explicitFocusOrder="0" pos="520 16 296 88" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Selects randomly positioned regions of the spectrum, and interchanges their halves. The Block size parameter sets the size of the blocks, given in percents of the whole frequency axis. This procedure is repeated a number of times, as specified, thus permutating the partials."
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="11.2" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="368 72 57 22" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="368 72 57 22" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

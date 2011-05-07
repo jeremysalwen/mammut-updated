@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  12 Feb 2007 2:53:55 am
+  Creation date:  7 May 2011 2:30:50pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_D2CC121__
-#define __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_D2CC121__
+#ifndef __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_126CCCDD__
+#define __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_126CCCDD__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -80,4 +82,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_D2CC121__
+#endif   // __JUCER_HEADER_PICTUREHOLDER_PICTUREHOLDER_126CCCDD__

@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:00:15 pm
+  Creation date:  7 May 2011 2:27:21pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_3F4E310E__
-#define __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_3F4E310E__
+#ifndef __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_6406881A__
+#define __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_6406881A__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -78,4 +78,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_3F4E310E__
+#endif   // __JUCER_HEADER_AMPLITUDETOPHASE_AMPLITUDETOPHASE_6406881A__

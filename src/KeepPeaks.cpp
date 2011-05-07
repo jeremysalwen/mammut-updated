@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  12 Feb 2007 1:59:29 am
+  Creation date:  7 May 2011 2:29:25pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -24,6 +26,8 @@
 #include "KeepPeaks.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 KeepPeaks::KeepPeaks ()
@@ -38,8 +42,12 @@ KeepPeaks::KeepPeaks ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x1fbbffd4));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -62,7 +70,10 @@ KeepPeaks::~KeepPeaks()
 //==============================================================================
 void KeepPeaks::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -77,12 +88,18 @@ void KeepPeaks::resized()
 
 void KeepPeaks::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == textButton)
     {
         //[UserButtonCode_textButton] -- add your button handler code here..
       doit(keep_peaks_ok);
         //[/UserButtonCode_textButton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -104,10 +121,12 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330000013"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent" pos="0 0 840 112"
-                  outlinecol="b0000000" title="Keep Peaks" textpos="33"/>
-  <TEXTBUTTON name="new button" memberName="textButton" pos="24 24 744 80"
-              bgColOff="1fbbffd4" buttonText="Do it!" connectedEdges="0" needsCallback="1"/>
+  <GROUPCOMPONENT name="new group" id="2e90fc2e979b984f" memberName="groupComponent"
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Keep Peaks" textpos="33"/>
+  <TEXTBUTTON name="new button" id="cb74e1d57c944bf8" memberName="textButton"
+              virtualName="" explicitFocusOrder="0" pos="24 24 744 80" bgColOff="1fbbffd4"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

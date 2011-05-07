@@ -1,40 +1,31 @@
 /*
   ==============================================================================
 
-   This file is part of the JUCE library - "Jules' Utility Class Extensions"
-   Copyright 2004-6 by Raw Material Software ltd.
+  This is an automatically generated file created by the Jucer!
+
+  Creation date:  7 May 2011 2:27:42pm
+
+  Be careful when adding custom code to these files, as only the code within
+  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
+  and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
-   JUCE can be redistributed and/or modified under the terms of the
-   GNU General Public License, as published by the Free Software Foundation;
-   either version 2 of the License, or (at your option) any later version.
-
-   JUCE is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with JUCE; if not, visit www.gnu.org/licenses or write to the
-   Free Software Foundation, Inc., 59 Temple Place, Suite 330,
-   Boston, MA 02111-1307 USA
-
-  ------------------------------------------------------------------------------
-
-   If you'd like to release a closed-source product which uses JUCE, commercial
-   licenses are also available: visit www.rawmaterialsoftware.com/juce for
-   more information.
+  The Jucer is part of the JUCE library - "Jules' Utility Class Extensions"
+  Copyright 2004-6 by Raw Material Software ltd.
 
   ==============================================================================
 */
 
-#ifndef __JUCER_COMPONENTTEMPLATE_JUCEHEADER__
-#define __JUCER_COMPONENTTEMPLATE_JUCEHEADER__
+#ifndef __JUCER_HEADER_DASBUTTONS_DASBUTTONS_B858614D__
+#define __JUCER_HEADER_DASBUTTONS_DASBUTTONS_B858614D__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
 //[/Headers]
+
 
 
 //==============================================================================
@@ -45,11 +36,9 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class DasButtons  : 
-  public ButtonListener,
-  public SliderListener,
-  public Component
-				
+class DasButtons  : public Component,
+                    public ButtonListener,
+                    public SliderListener
 {
 public:
     //==============================================================================
@@ -74,7 +63,6 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    GroupComponent *gc;
     TextButton* textButton1;
     TextButton* textButton4;
     TextButton* textButton2;
@@ -91,4 +79,4 @@ private:
 };
 
 
-#endif   // __JUCER_COMPONENTTEMPLATE_JUCEHEADER__
+#endif   // __JUCER_HEADER_DASBUTTONS_DASBUTTONS_B858614D__

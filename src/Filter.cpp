@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:57:42 pm
+  Creation date:  7 May 2011 2:28:20pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "Filter.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Filter::Filter ()
@@ -51,7 +53,7 @@ Filter::Filter ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x42bbbbff));
 
     addAndMakeVisible (label = new Label (T("new label"),
@@ -113,7 +115,7 @@ Filter::Filter ()
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x56bbbbff));
 
     addAndMakeVisible (label4 = new Label (T("new label"),
@@ -129,8 +131,12 @@ Filter::Filter ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -164,7 +170,10 @@ Filter::~Filter()
 //==============================================================================
 void Filter::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -264,48 +273,52 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="18dab2997cfa100c" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Filter" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Filter" textpos="33"/>
   <TEXTBUTTON name="new button" id="5f136d404edb3db6" memberName="textButton"
-              pos="616 16 40 88" bgColOff="42bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="6bb714d5bf6773b7" memberName="label" pos="8 8 152 40"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Lower cutoff (Hz)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+              virtualName="" explicitFocusOrder="0" pos="616 16 40 88" bgColOff="42bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="6bb714d5bf6773b7" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="8 8 152 40" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Lower cutoff (Hz)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <SLIDER name="new slider" id="e5a32b976af5c6e3" memberName="lower_cutoffslider"
-          pos="160 16 456 24" thumbcol="7bffffff" textboxbkgd="ffffff"
-          min="0" max="10000" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
+          virtualName="" explicitFocusOrder="0" pos="160 16 456 24" thumbcol="7bffffff"
+          textboxbkgd="ffffff" min="0" max="10000" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
   <SLIDER name="new slider" id="1ded34e762cd159e" memberName="upper_cutoffslider"
-          pos="160 48 456 24" thumbcol="7dffffff" textboxbkgd="ffffff"
-          min="0" max="22050" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="c7619f1df5ed676" memberName="label2" pos="8 48 150 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Upper cutoff (Hz)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="160 48 456 24" thumbcol="7dffffff"
+          textboxbkgd="ffffff" min="0" max="22050" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="c7619f1df5ed676" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="8 48 150 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Upper cutoff (Hz)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <SLIDER name="new slider" id="ce58da39c79428b0" memberName="sharpnessslider"
-          pos="160 80 456 24" thumbcol="77ffffff" textboxbkgd="ffffff"
-          min="0" max="10" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="1522a264de8b0764" memberName="label3" pos="8 80 150 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Sharpness (0-10)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="160 80 456 24" thumbcol="77ffffff"
+          textboxbkgd="ffffff" min="0" max="10" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="1522a264de8b0764" memberName="label3" virtualName=""
+         explicitFocusOrder="0" pos="8 80 150 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Sharpness (0-10)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="resetbutton" id="ce83e0b9810b5413" memberName="resetbutton"
-              pos="704 16 32 88" bgColOff="56bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="ba6ace2c652dfbd9" memberName="label4" pos="744 16 80 88"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Optimal bandstop filter. The ultimate in cut-off performance!"
+              virtualName="" explicitFocusOrder="0" pos="704 16 32 88" bgColOff="56bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="ba6ace2c652dfbd9" memberName="label4" virtualName=""
+         explicitFocusOrder="0" pos="744 16 80 88" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Optimal bandstop filter. The ultimate in cut-off performance!"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="12.4" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="656 16 48 88" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="656 16 48 88" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

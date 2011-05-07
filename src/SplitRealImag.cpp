@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  19 Jan 2007 11:26:58 pm
+  Creation date:  7 May 2011 2:31:33pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -24,6 +26,8 @@
 #include "SplitRealImag.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 SplitRealImag::SplitRealImag ()
@@ -38,8 +42,12 @@ SplitRealImag::SplitRealImag ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x37bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -62,7 +70,10 @@ SplitRealImag::~SplitRealImag()
 //==============================================================================
 void SplitRealImag::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -77,12 +88,18 @@ void SplitRealImag::resized()
 
 void SplitRealImag::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == textButton)
     {
         //[UserButtonCode_textButton] -- add your button handler code here..
       doit(split_real_imag_ok);
         //[/UserButtonCode_textButton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -104,10 +121,12 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330000013"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent" pos="0 0 840 112"
-                  outlinecol="b0000000" title="Slit Real/Imag" textpos="33"/>
-  <TEXTBUTTON name="new button" memberName="textButton" pos="64 40 736 56"
-              bgColOff="37bbbbff" buttonText="Do it!" connectedEdges="0" needsCallback="1"/>
+  <GROUPCOMPONENT name="new group" id="bfaf521495c20fdb" memberName="groupComponent"
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Slit Real/Imag" textpos="33"/>
+  <TEXTBUTTON name="new button" id="c28a6e2b7951456b" memberName="textButton"
+              virtualName="" explicitFocusOrder="0" pos="64 40 736 56" bgColOff="37bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

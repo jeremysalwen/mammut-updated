@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  28 Jan 2007 11:31:33 pm
+  Creation date:  7 May 2011 2:29:01pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_INTERFACE_INTERFACE_8057BDDA__
-#define __JUCER_HEADER_INTERFACE_INTERFACE_8057BDDA__
+#ifndef __JUCER_HEADER_INTERFACE_INTERFACEOLD_F82D1B02__
+#define __JUCER_HEADER_INTERFACE_INTERFACEOLD_F82D1B02__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -117,7 +119,7 @@ private:
     ToggleButton* normalizebutton;
     TextButton* saveasbutton;
     TextButton* aboutbutton;
-    Image* internalCachedImage3;
+    Image cachedImage_mammut_zerlegentmp_jpg;
 
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
@@ -126,4 +128,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_INTERFACE_INTERFACE_8057BDDA__
+#endif   // __JUCER_HEADER_INTERFACE_INTERFACEOLD_F82D1B02__

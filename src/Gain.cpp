@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:00:38 pm
+  Creation date:  7 May 2011 2:28:25pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "Gain.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Gain::Gain ()
@@ -67,12 +69,12 @@ Gain::Gain ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x39bbbbff));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -88,8 +90,12 @@ Gain::Gain ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -119,7 +125,10 @@ Gain::~Gain()
 //==============================================================================
 void Gain::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -201,30 +210,32 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="8a4305fe9202d789" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Gain" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Gain" textpos="33"/>
   <SLIDER name="new slider" id="55a79003204e2b63" memberName="amplitude_multiplierslider"
-          pos="192 24 400 24" bkgcol="956565" thumbcol="79fffcfc" textboxbkgd="ffffff"
-          min="0" max="100" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="66594d2209fd12cf" memberName="label" pos="16 24 168 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Amplitude multiplier (0-100)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="192 24 400 24" bkgcol="956565"
+          thumbcol="79fffcfc" textboxbkgd="ffffff" min="0" max="100" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="66594d2209fd12cf" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 24 168 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Amplitude multiplier (0-100)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="37fd5a7f469171ba" memberName="textButton"
-              pos="8 56 150 24" bgColOff="39bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="8 56 150 24" bgColOff="39bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="af43ac9e697ae875" memberName="resetbutton"
-              pos="272 56 296 48" bgColOff="40bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="5d9800aa5230dbec" memberName="label2" pos="600 24 224 72"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="A highly useful function, because many of the transforms will change the gain and the spectrum may have to be re-scaled manually. (An alternative is to use the &quot;normalize&quot; button)"
+              virtualName="" explicitFocusOrder="0" pos="272 56 296 48" bgColOff="40bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="5d9800aa5230dbec" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="600 24 224 72" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="A highly useful function, because many of the transforms will change the gain and the spectrum may have to be re-scaled manually. (An alternative is to use the &quot;normalize&quot; button)"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="185 64 63 40" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="185 64 63 40" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  19 Jan 2007 11:26:58 pm
+  Creation date:  7 May 2011 2:31:33pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_88774AA9__
-#define __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_88774AA9__
+#ifndef __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__
+#define __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -69,4 +71,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_88774AA9__
+#endif   // __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__

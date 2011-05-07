@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  12 Feb 2007 2:04:52 am
+  Creation date:  7 May 2011 2:31:49pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -26,6 +28,8 @@
 #include "Stereo.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Stereo::Stereo ()
@@ -51,7 +55,7 @@ Stereo::Stereo ()
     addAndMakeVisible (swapphasesbutton = new TextButton (T("new button")));
     swapphasesbutton->setTooltip (T("The phases, but not the amplitudes, are interchanged between the two channels."));
     swapphasesbutton->setButtonText (T("Do it!"));
-    swapphasesbutton->addButtonListener (this);
+    swapphasesbutton->addListener (this);
     swapphasesbutton->setColour (TextButton::buttonColourId, Colour (0x33bbbbff));
 
     addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
@@ -61,7 +65,7 @@ Stereo::Stereo ()
     addAndMakeVisible (crossoverbutton = new TextButton (T("new button")));
     crossoverbutton->setTooltip (T("Swaps blocks between the two channels. The probability, for each frequency bin, that the program will switch between swapping and non-swapping mode as it runs through all the bins, must be specified. Small probability means that large blocks are swapped (or kept)."));
     crossoverbutton->setButtonText (T("Do it!"));
-    crossoverbutton->addButtonListener (this);
+    crossoverbutton->addListener (this);
     crossoverbutton->setColour (TextButton::buttonColourId, Colour (0x35bbbbff));
 
     addAndMakeVisible (label = new Label (T("new label"),
@@ -95,8 +99,12 @@ Stereo::Stereo ()
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
     addAndMakeVisible (resetbutton = new TextButton (T("Reset")));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x23bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -128,7 +136,10 @@ Stereo::~Stereo()
 //==============================================================================
 void Stereo::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
@@ -149,6 +160,9 @@ void Stereo::resized()
 
 void Stereo::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == swapphasesbutton)
     {
         //[UserButtonCode_swapphasesbutton] -- add your button handler code here..
@@ -167,15 +181,24 @@ void Stereo::buttonClicked (Button* buttonThatWasClicked)
       resetval(crossover,switching_probability);
         //[/UserButtonCode_resetbutton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 void Stereo::sliderValueChanged (Slider* sliderThatWasMoved)
 {
+    //[UsersliderValueChanged_Pre]
+    //[/UsersliderValueChanged_Pre]
+
     if (sliderThatWasMoved == switching_probabilityslider)
     {
         //[UserSliderCode_switching_probabilityslider] -- add your slider handling code here..
         //[/UserSliderCode_switching_probabilityslider]
     }
+
+    //[UsersliderValueChanged_Post]
+    //[/UsersliderValueChanged_Post]
 }
 
 
@@ -197,34 +220,40 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330000013"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent3" pos="656 16 176 88"
-                  title="Swap Phases"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent2" pos="0 0 840 112"
-                  outlinecol="b0000000" title="Stereo" textpos="33"/>
-  <TEXTBUTTON name="new button" memberName="swapphasesbutton" pos="664 32 160 56"
-              tooltip="The phases, but not the amplitudes, are interchanged between the two channels."
-              bgColOff="33bbbbff" buttonText="Do it!" connectedEdges="0" needsCallback="1"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent" pos="8 16 536 88"
-                  outlinecol="6c000000" title="Crossover"/>
-  <TEXTBUTTON name="new button" memberName="crossoverbutton" pos="16 64 472 32"
-              tooltip="Swaps blocks between the two channels. The probability, for each frequency bin, that the program will switch between swapping and non-swapping mode as it runs through all the bins, must be specified. Small probability means that large blocks are swapped (or kept)."
-              bgColOff="35bbbbff" buttonText="Do it!" connectedEdges="0" needsCallback="1"/>
-  <LABEL name="new label" memberName="label" pos="24 24 216 40" bkgCol="0"
-         textCol="ff000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="Switching Probability for Crossover" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
-  <SLIDER name="new slider" memberName="switching_probabilityslider" pos="248 32 288 24"
-          thumbcol="6affffff" textboxbkgd="ffffff" min="0" max="1" int="0"
-          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" memberName="label2" pos="560 48 80 24" bkgCol="0"
-         textCol="ff000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
-         labelText="(Stereo files only)" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="11.2"
-         bold="0" italic="0" justification="33"/>
-  <TEXTBUTTON name="Reset" memberName="resetbutton" pos="488 64 48 32" bgColOff="23bbbbff"
-              buttonText="Reset" connectedEdges="0" needsCallback="1"/>
+  <GROUPCOMPONENT name="new group" id="6882b74670113c4c" memberName="groupComponent3"
+                  virtualName="" explicitFocusOrder="0" pos="656 16 176 88" title="Swap Phases"/>
+  <GROUPCOMPONENT name="new group" id="4b9c83f8eb4275f" memberName="groupComponent2"
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Stereo" textpos="33"/>
+  <TEXTBUTTON name="new button" id="4c118e3f14b476cb" memberName="swapphasesbutton"
+              virtualName="" explicitFocusOrder="0" pos="664 32 160 56" tooltip="The phases, but not the amplitudes, are interchanged between the two channels."
+              bgColOff="33bbbbff" buttonText="Do it!" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
+  <GROUPCOMPONENT name="new group" id="dddb75ca65434f07" memberName="groupComponent"
+                  virtualName="" explicitFocusOrder="0" pos="8 16 536 88" outlinecol="6c000000"
+                  title="Crossover"/>
+  <TEXTBUTTON name="new button" id="cc5b1c61661b71cc" memberName="crossoverbutton"
+              virtualName="" explicitFocusOrder="0" pos="16 64 472 32" tooltip="Swaps blocks between the two channels. The probability, for each frequency bin, that the program will switch between swapping and non-swapping mode as it runs through all the bins, must be specified. Small probability means that large blocks are swapped (or kept)."
+              bgColOff="35bbbbff" buttonText="Do it!" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
+  <LABEL name="new label" id="c7d57f69ecf13700" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="24 24 216 40" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Switching Probability for Crossover"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
+  <SLIDER name="new slider" id="d3c83e81584e93e" memberName="switching_probabilityslider"
+          virtualName="" explicitFocusOrder="0" pos="248 32 288 24" thumbcol="6affffff"
+          textboxbkgd="ffffff" min="0" max="1" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="4ad2c2ab7613cc6e" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="560 48 80 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="(Stereo files only)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="11.2" bold="0" italic="0" justification="33"/>
+  <TEXTBUTTON name="Reset" id="38afd0c56a220c50" memberName="resetbutton" virtualName=""
+              explicitFocusOrder="0" pos="488 64 48 32" bgColOff="23bbbbff"
+              buttonText="Reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

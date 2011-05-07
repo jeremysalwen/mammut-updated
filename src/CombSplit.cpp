@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:00:57 pm
+  Creation date:  7 May 2011 2:27:36pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "CombSplit.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 CombSplit::CombSplit ()
@@ -48,7 +50,7 @@ CombSplit::CombSplit ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x2ebbbbff));
 
     addAndMakeVisible (label = new Label (T("new label"),
@@ -91,13 +93,17 @@ CombSplit::CombSplit ()
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x35bbbbff));
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -128,7 +134,10 @@ CombSplit::~CombSplit()
 //==============================================================================
 void CombSplit::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -169,7 +178,7 @@ void CombSplit::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_textButton2] -- add your button handler code here..
       redoit(combsplit_ok);
-      //[/UserButtonCode_textButton2]
+        //[/UserButtonCode_textButton2]
     }
 
     //[UserbuttonClicked_Post]
@@ -218,34 +227,37 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="813cf4cc6ef518ec" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Comb Split" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Comb Split" textpos="33"/>
   <TEXTBUTTON name="new button" id="a296199c4ad44c76" memberName="textButton"
-              pos="496 16 264 88" bgColOff="2ebbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="7fc4f4217eaac6c0" memberName="label" pos="16 16 152 40"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Block size (# of bins)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+              virtualName="" explicitFocusOrder="0" pos="496 16 264 88" bgColOff="2ebbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="7fc4f4217eaac6c0" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 152 40" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Block size (# of bins)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <SLIDER name="new slider" id="ded377741f47ff6" memberName="block_sizeslider"
-          pos="168 24 320 24" thumbcol="79ffffff" textboxbkgd="ffffff"
-          min="0" max="99" int="1" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
+          virtualName="" explicitFocusOrder="0" pos="168 24 320 24" thumbcol="79ffffff"
+          textboxbkgd="ffffff" min="0" max="99" int="1" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
   <SLIDER name="new slider" id="14d220fc7ed9e2c3" memberName="number_of_filesslider"
-          pos="168 64 320 24" thumbcol="6effffff" textboxbkgd="ffffff"
-          min="1" max="10" int="1" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="9cccb5561040c8ab" memberName="label2" pos="16 64 150 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Number of files" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="168 64 320 24" thumbcol="6effffff"
+          textboxbkgd="ffffff" min="1" max="10" int="1" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="9cccb5561040c8ab" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="16 64 150 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Number of files"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="resetbutton" id="d7f90534ef7b8fe4" memberName="resetbutton"
-              pos="792 80 38 24" bgColOff="35bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="792 80 38 24" bgColOff="35bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="768 16 64 56" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="768 16 64 56" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

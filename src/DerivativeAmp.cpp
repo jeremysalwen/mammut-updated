@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:56:58 pm
+  Creation date:  7 May 2011 2:28:01pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "DerivativeAmp.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 DerivativeAmp::DerivativeAmp ()
@@ -67,12 +69,12 @@ DerivativeAmp::DerivativeAmp ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x39bbbbff));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x42bbbbff));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -88,8 +90,12 @@ DerivativeAmp::DerivativeAmp ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -119,7 +125,10 @@ DerivativeAmp::~DerivativeAmp()
 //==============================================================================
 void DerivativeAmp::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -172,7 +181,7 @@ void DerivativeAmp::buttonClicked (Button* buttonThatWasClicked)
     }
     else if (buttonThatWasClicked == textButton2)
     {
-      //[UserButtonCode_textButton2] -- add your button handler code here..
+        //[UserButtonCode_textButton2] -- add your button handler code here..
       redoit(derivate_amp_ok);
         //[/UserButtonCode_textButton2]
     }
@@ -201,31 +210,32 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="83715a9bd6b279b7" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Derivate Amp"
-                  textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Derivate Amp" textpos="33"/>
   <SLIDER name="new slider" id="d94fba49aa3b2756" memberName="amp_derivate_multiplierslider"
-          pos="216 16 616 24" bkgcol="956565" thumbcol="7dfffcfc" textboxbkgd="ffffff"
-          min="-5" max="5" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="4a13b2f2f9f57dfa" memberName="label" pos="16 16 240 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Amp derivate multiplier (-5 5)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="216 16 616 24" bkgcol="956565"
+          thumbcol="7dfffcfc" textboxbkgd="ffffff" min="-5" max="5" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="4a13b2f2f9f57dfa" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 240 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Amp derivate multiplier (-5 5)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="4b31987a13cf2a33" memberName="textButton"
-              pos="8 48 288 56" bgColOff="39bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="8 48 288 56" bgColOff="39bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="763f7adeb3248d95" memberName="resetbutton"
-              pos="416 48 150 24" bgColOff="42bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="24e9fb8e945ddbae" memberName="label2" pos="576 48 247 56"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Replaces the amplitude spectrum with its derivative (slope). You may specify a gain factor.&#10;"
+              virtualName="" explicitFocusOrder="0" pos="416 48 150 24" bgColOff="42bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="24e9fb8e945ddbae" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="576 48 247 56" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Replaces the amplitude spectrum with its derivative (slope). You may specify a gain factor.&#10;"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="312 48 96 56" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="312 48 96 56" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

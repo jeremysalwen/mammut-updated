@@ -1,30 +1,20 @@
 /*
   ==============================================================================
 
-   This file is part of the JUCE library - "Jules' Utility Class Extensions"
-   Copyright 2004-6 by Raw Material Software ltd.
+  This is an automatically generated file created by the Jucer!
+
+  Creation date:  7 May 2011 2:27:42pm
+
+  Be careful when adding custom code to these files, as only the code within
+  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
+  and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
-   JUCE can be redistributed and/or modified under the terms of the
-   GNU General Public License, as published by the Free Software Foundation;
-   either version 2 of the License, or (at your option) any later version.
-
-   JUCE is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with JUCE; if not, visit www.gnu.org/licenses or write to the
-   Free Software Foundation, Inc., 59 Temple Place, Suite 330,
-   Boston, MA 02111-1307 USA
-
-  ------------------------------------------------------------------------------
-
-   If you'd like to release a closed-source product which uses JUCE, commercial
-   licenses are also available: visit www.rawmaterialsoftware.com/juce for
-   more information.
+  The Jucer is part of the JUCE library - "Jules' Utility Class Extensions"
+  Copyright 2004-6 by Raw Material Software ltd.
 
   ==============================================================================
 */
@@ -35,76 +25,77 @@
 #include "DasButtons.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
+
 //==============================================================================
 DasButtons::DasButtons ()
-  :  textButton1 (0),
-    textButton4 (0),
-    textButton2 (0),
-    textButton5 (0),
-    textButton6 (0),
-    textButton7 (0),
-    toggleButton3 (0),
-    slider (0)
+    : textButton1 (0),
+      textButton4 (0),
+      textButton2 (0),
+      textButton5 (0),
+      textButton6 (0),
+      textButton7 (0),
+      toggleButton3 (0),
+      slider (0)
 {
-
-    gc=new GroupComponent(T("ai"),T("")),
-    gc->setSize (700, 100);
-    gc->setBounds(0,0,700,100);
-    addAndMakeVisible(gc);
-
-    gc->addAndMakeVisible (textButton1 = new TextButton (T("Play")));
-    textButton1->addButtonListener (this);
+    addAndMakeVisible (textButton1 = new TextButton (T("Play")));
+    textButton1->addListener (this);
     textButton1->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton1->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton1->setColour (TextButton::textColourId, Colours::black);
+    textButton1->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (textButton4 = new TextButton (T("Play")));
+    addAndMakeVisible (textButton4 = new TextButton (T("Play")));
     textButton4->setButtonText (T("<"));
-    textButton4->addButtonListener (this);
+    textButton4->addListener (this);
     textButton4->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton4->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton4->setColour (TextButton::textColourId, Colours::black);
+    textButton4->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (textButton2 = new TextButton (T("Play")));
+    addAndMakeVisible (textButton2 = new TextButton (T("Play")));
     textButton2->setButtonText (T("Stop"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton2->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton2->setColour (TextButton::textColourId, Colours::black);
+    textButton2->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (textButton5 = new TextButton (T("Play")));
+    addAndMakeVisible (textButton5 = new TextButton (T("Play")));
     textButton5->setButtonText (T(">"));
-    textButton5->addButtonListener (this);
+    textButton5->addListener (this);
     textButton5->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton5->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton5->setColour (TextButton::textColourId, Colours::black);
+    textButton5->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (textButton6 = new TextButton (T("Play")));
+    addAndMakeVisible (textButton6 = new TextButton (T("Play")));
     textButton6->setButtonText (T("Undo"));
-    textButton6->addButtonListener (this);
+    textButton6->addListener (this);
     textButton6->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton6->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton6->setColour (TextButton::textColourId, Colours::black);
+    textButton6->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (textButton7 = new TextButton (T("Play")));
+    addAndMakeVisible (textButton7 = new TextButton (T("Play")));
     textButton7->setButtonText (T("Redo"));
-    textButton7->addButtonListener (this);
+    textButton7->addListener (this);
     textButton7->setColour (TextButton::buttonColourId, Colour (0xffbbbbff));
     textButton7->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
-    textButton7->setColour (TextButton::textColourId, Colours::black);
+    textButton7->setColour (TextButton::textColourOnId, Colours::black);
 
-    gc->addAndMakeVisible (toggleButton3 = new ToggleButton (T("new toggle button")));
+    addAndMakeVisible (toggleButton3 = new ToggleButton (T("new toggle button")));
     toggleButton3->setButtonText (T("Zoom"));
-    toggleButton3->addButtonListener (this);
+    toggleButton3->addListener (this);
 
-    gc->addAndMakeVisible (slider = new Slider (T("new slider")));
+    addAndMakeVisible (slider = new Slider (T("new slider")));
     slider->setRange (0, 100, 0);
     slider->setSliderStyle (Slider::LinearBar);
     slider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     slider->addListener (this);
 
 
-    setSize(700,500);
+    //[UserPreSize]
+    //[/UserPreSize]
+
+    setSize (600, 400);
+
     //[Constructor] You can add your own custom stuff here..
     //[/Constructor]
 }
@@ -130,16 +121,17 @@ DasButtons::~DasButtons()
 //==============================================================================
 void DasButtons::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colours::white);
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
 void DasButtons::resized()
 {
-    gc->setBounds(20,20,650,100);
-
     textButton1->setBounds (168, 24, 56, 24);
     textButton4->setBounds (360, 24, 56, 24);
     textButton2->setBounds (232, 24, 56, 24);
@@ -154,6 +146,9 @@ void DasButtons::resized()
 
 void DasButtons::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == textButton1)
     {
         //[UserButtonCode_textButton1] -- add your button handler code here..
@@ -189,15 +184,24 @@ void DasButtons::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_toggleButton3] -- add your button handler code here..
         //[/UserButtonCode_toggleButton3]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 void DasButtons::sliderValueChanged (Slider* sliderThatWasMoved)
 {
+    //[UsersliderValueChanged_Pre]
+    //[/UsersliderValueChanged_Pre]
+
     if (sliderThatWasMoved == slider)
     {
         //[UserSliderCode_slider] -- add your slider handling code here..
         //[/UserSliderCode_slider]
     }
+
+    //[UsersliderValueChanged_Post]
+    //[/UsersliderValueChanged_Post]
 }
 
 
@@ -219,29 +223,37 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330000013"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffffff"/>
-  <TEXTBUTTON name="Play" memberName="textButton1" pos="168 24 56 24" bgColOff="ffbbbbff"
+  <TEXTBUTTON name="Play" id="2f9e62febab459cb" memberName="textButton1" virtualName=""
+              explicitFocusOrder="0" pos="168 24 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Play" connectedEdges="0"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="textButton4" pos="360 24 56 24" bgColOff="ffbbbbff"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="ad2cf6f9ce809584" memberName="textButton4" virtualName=""
+              explicitFocusOrder="0" pos="360 24 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="&lt;" connectedEdges="0"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="textButton2" pos="232 24 56 24" bgColOff="ffbbbbff"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="1b64f6c4c481a1a4" memberName="textButton2" virtualName=""
+              explicitFocusOrder="0" pos="232 24 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Stop" connectedEdges="0"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="textButton5" pos="424 24 56 24" bgColOff="ffbbbbff"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="dfcb3e8de1aeee04" memberName="textButton5" virtualName=""
+              explicitFocusOrder="0" pos="424 24 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="&gt;" connectedEdges="0"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="textButton6" pos="488 24 56 24" bgColOff="ffbbbbff"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="de07de2d4bcd064b" memberName="textButton6" virtualName=""
+              explicitFocusOrder="0" pos="488 24 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Undo" connectedEdges="0"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="textButton7" pos="552 48r 56 24" bgColOff="ffbbbbff"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="8114230c27263ed" memberName="textButton7" virtualName=""
+              explicitFocusOrder="0" pos="552 48r 56 24" bgColOff="ffbbbbff"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="Redo" connectedEdges="0"
-              needsCallback="1"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="toggleButton3" pos="288 24 63 24"
-                buttonText="Zoom" connectedEdges="0" needsCallback="1" state="0"/>
-  <SLIDER name="new slider" memberName="slider" pos="8 24 152 24" min="0"
-          max="100" int="0" style="LinearBar" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
+              needsCallback="1" radioGroupId="0"/>
+  <TOGGLEBUTTON name="new toggle button" id="eed65434d461870c" memberName="toggleButton3"
+                virtualName="" explicitFocusOrder="0" pos="288 24 63 24" buttonText="Zoom"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <SLIDER name="new slider" id="d20588cd0282154f" memberName="slider" virtualName=""
+          explicitFocusOrder="0" pos="8 24 152 24" min="0" max="100" int="0"
+          style="LinearBar" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:00:15 pm
+  Creation date:  7 May 2011 2:27:21pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "AmplitudeToPhase.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 AmplitudeToPhase::AmplitudeToPhase ()
@@ -67,12 +69,12 @@ AmplitudeToPhase::AmplitudeToPhase ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x4bbbbbff));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -88,8 +90,12 @@ AmplitudeToPhase::AmplitudeToPhase ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -119,7 +125,10 @@ AmplitudeToPhase::~AmplitudeToPhase()
 //==============================================================================
 void AmplitudeToPhase::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -201,31 +210,32 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="b880ddf3fdd6b193" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Amplitude-&gt;Phase"
-                  textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Amplitude-&gt;Phase" textpos="33"/>
   <SLIDER name="new slider" id="807ca89b74850460" memberName="amplitude_multiplierslider"
-          pos="184 24 344 24" bkgcol="956565" thumbcol="79fffcfc" textboxbkgd="ffffff"
-          min="0" max="100" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="ce6c95c064dc0e4b" memberName="label" pos="16 24 168 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Amplitude multiplier (0-100)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="184 24 344 24" bkgcol="956565"
+          thumbcol="79fffcfc" textboxbkgd="ffffff" min="0" max="100" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="ce6c95c064dc0e4b" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 24 168 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Amplitude multiplier (0-100)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="8d115d52803e1427" memberName="textButton"
-              pos="16 56 240 40" bgColOff="4bbbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="16 56 240 40" bgColOff="4bbbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="162d7d09158f8957" memberName="resetbutton"
-              pos="360 64 150 24" bgColOff="40bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="88f6dfdb6cb4fdd5" memberName="label2" pos="552 16 296 88"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="The phases of the partials are set to their respective amplitudes, after a specified gain multiplication. Rather useless."
+              virtualName="" explicitFocusOrder="0" pos="360 64 150 24" bgColOff="40bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="88f6dfdb6cb4fdd5" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="552 16 296 88" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="The phases of the partials are set to their respective amplitudes, after a specified gain multiplication. Rather useless."
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="256 72 104 24" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="256 72 104 24" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

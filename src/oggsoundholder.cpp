@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  28 Jan 2007 11:25:43 pm
+  Creation date:  7 May 2011 2:30:42pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -23,11 +25,17 @@
 #include "oggsoundholder.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 oggsoundholder::oggsoundholder ()
     : Component (T("oggsoundholder"))
 {
+
+    //[UserPreSize]
+    //[/UserPreSize]
+
     setSize (600, 400);
 
     //[Constructor] You can add your own custom stuff here..
@@ -48,9 +56,12 @@ oggsoundholder::~oggsoundholder()
 //==============================================================================
 void oggsoundholder::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colours::white);
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
@@ -88,7 +99,7 @@ END_JUCER_METADATA
 //==============================================================================
 // Binary resources - be careful not to edit any of these sections!
 
-// JUCER_RESOURCE: jack_capture_02_ogg, 500571, "/div/notam02/u2/kjetism/localdomain/newmammut/sounds/jack_capture_02.ogg"
+// JUCER_RESOURCE: jack_capture_02_ogg, 500571, "../../../../div/notam02/u2/kjetism/localdomain/newmammut/sounds/jack_capture_02.ogg"
 static const unsigned char resource_oggsoundholder_jack_capture_02_ogg[] = { 79,103,103,83,0,2,0,0,0,0,0,0,0,0,117,37,252,42,0,0,0,0,93,200,126,78,1,30,1,118,111,114,98,105,115,0,0,0,0,2,68,172,0,0,0,
 0,0,0,128,181,1,0,0,0,0,0,184,1,79,103,103,83,0,0,0,0,0,0,0,0,0,0,117,37,252,42,1,0,0,0,181,160,221,32,17,45,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,7,3,118,111,114,98,105,115,29,0,
 0,0,88,105,112,104,46,79,114,103,32,108,105,98,86,111,114,98,105,115,32,73,32,50,48,48,52,48,54,50,57,0,0,0,0,1,5,118,111,114,98,105,115,37,66,67,86,1,0,64,0,0,36,115,24,42,70,165,115,22,132,16,26,66,

@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:23:37 pm
+  Creation date:  7 May 2011 2:30:23pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "MultiplyPhase.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 MultiplyPhase::MultiplyPhase ()
@@ -69,12 +71,12 @@ MultiplyPhase::MultiplyPhase ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x18bbbbff));
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
     addAndMakeVisible (label2 = new Label (T("new label"),
@@ -90,12 +92,16 @@ MultiplyPhase::MultiplyPhase ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x18bbbbff));
 
     addAndMakeVisible (randomButton = new ToggleButton (T("new toggle button")));
     randomButton->setButtonText (T("Random Phases"));
-    randomButton->addButtonListener (this);
+    randomButton->addListener (this);
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -126,7 +132,10 @@ MultiplyPhase::~MultiplyPhase()
 //==============================================================================
 void MultiplyPhase::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -221,35 +230,35 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="63982491923e616a" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Multiply Phase"
-                  textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Multiply Phase" textpos="33"/>
   <SLIDER name="new slider" id="c78bbad1826a74b8" memberName="phase_multiplierslider"
-          pos="192 24 632 24" bkgcol="956565" thumbcol="75ffffff" textboxbkgd="ffffff"
-          textboxhighlight="251111ee" min="-5" max="5" int="0" style="LinearHorizontal"
-          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20"/>
-  <LABEL name="new label" id="740a4249cc0cf9e7" memberName="label" pos="32 24 152 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Phase multiplier (-5 5)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="192 24 632 24" bkgcol="956565"
+          thumbcol="75ffffff" textboxbkgd="ffffff" textboxhighlight="251111ee"
+          min="-5" max="5" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="740a4249cc0cf9e7" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="32 24 152 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Phase multiplier (-5 5)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="734d88f6daad4219" memberName="textButton"
-              pos="200 64 136 40" bgColOff="18bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="200 64 136 40" bgColOff="18bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetbutton" id="d27b0d5ba4bf5735" memberName="resetbutton"
-              pos="432 56 80 40" bgColOff="25bbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="40dca1edd0d44f07" memberName="label2" pos="528 48 296 64"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Multiply all phases with the value you specify. A value of -1 will reverse the sound.&#10;"
+              virtualName="" explicitFocusOrder="0" pos="432 56 80 40" bgColOff="25bbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="40dca1edd0d44f07" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="528 48 296 64" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Multiply all phases with the value you specify. A value of -1 will reverse the sound.&#10;"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="336 64 88 40" bgColOff="18bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="336 64 88 40" bgColOff="18bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="new toggle button" id="1d048fa86d10aed7" memberName="randomButton"
-                pos="16 64 150 24" buttonText="Random Phases" connectedEdges="0"
-                needsCallback="1" state="0"/>
+                virtualName="" explicitFocusOrder="0" pos="16 64 150 24" buttonText="Random Phases"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  20 Jan 2007 11:44:45 pm
+  Creation date:  7 May 2011 2:32:34pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -24,6 +26,8 @@
 #include "Zoom.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Zoom::Zoom ()
@@ -40,25 +44,27 @@ Zoom::Zoom ()
 
     addAndMakeVisible (zoomtoggle = new ToggleButton (T("new toggle button")));
     zoomtoggle->setButtonText (T("Zoom"));
-    zoomtoggle->addButtonListener (this);
+    zoomtoggle->addListener (this);
 
     addAndMakeVisible (zoomleft = new TextButton (T("Play")));
     zoomleft->setButtonText (T("<"));
     zoomleft->setConnectedEdges (Button::ConnectedOnRight);
-    zoomleft->addButtonListener (this);
+    zoomleft->addListener (this);
     zoomleft->setColour (TextButton::buttonColourId, Colour (0x7bb46b1f));
     zoomleft->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
     zoomleft->setColour (TextButton::textColourOnId, Colours::black);
-    zoomleft->setColour (TextButton::textColourOffId, Colours::black);
 
     addAndMakeVisible (zoomright = new TextButton (T("Play")));
     zoomright->setButtonText (T(">"));
     zoomright->setConnectedEdges (Button::ConnectedOnLeft);
-    zoomright->addButtonListener (this);
+    zoomright->addListener (this);
     zoomright->setColour (TextButton::buttonColourId, Colour (0x8fab6e38));
     zoomright->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
     zoomright->setColour (TextButton::textColourOnId, Colours::black);
-    zoomright->setColour (TextButton::textColourOffId, Colours::black);
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -83,7 +89,10 @@ Zoom::~Zoom()
 //==============================================================================
 void Zoom::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
@@ -99,6 +108,9 @@ void Zoom::resized()
 
 void Zoom::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == zoomtoggle)
     {
         //[UserButtonCode_zoomtoggle] -- add your button handler code here..
@@ -120,6 +132,9 @@ void Zoom::buttonClicked (Button* buttonThatWasClicked)
       //graphcomponent->repaint();
         //[/UserButtonCode_zoomright]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -141,16 +156,20 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330000013"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
-  <GROUPCOMPONENT name="new group" memberName="groupComponent2" pos="0 0 840 112"
-                  outlinecol="b0000000" title="Zoom" textpos="33"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="zoomtoggle" pos="16 16 80 88"
-                buttonText="Zoom" connectedEdges="0" needsCallback="1" state="0"/>
-  <TEXTBUTTON name="Play" memberName="zoomleft" pos="104 16 336 88" bgColOff="7bb46b1f"
+  <GROUPCOMPONENT name="new group" id="f0171705f04a534" memberName="groupComponent2"
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Zoom" textpos="33"/>
+  <TOGGLEBUTTON name="new toggle button" id="35859d636e84b6b7" memberName="zoomtoggle"
+                virtualName="" explicitFocusOrder="0" pos="16 16 80 88" buttonText="Zoom"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TEXTBUTTON name="Play" id="68fc6b72ad3ec761" memberName="zoomleft" virtualName=""
+              explicitFocusOrder="0" pos="104 16 336 88" bgColOff="7bb46b1f"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="&lt;" connectedEdges="2"
-              needsCallback="1"/>
-  <TEXTBUTTON name="Play" memberName="zoomright" pos="448 16 376 88" bgColOff="8fab6e38"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="Play" id="2b091dc701c7cc7b" memberName="zoomright" virtualName=""
+              explicitFocusOrder="0" pos="448 16 376 88" bgColOff="8fab6e38"
               bgColOn="ff4444ff" textCol="ff000000" buttonText="&gt;" connectedEdges="1"
-              needsCallback="1"/>
+              needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

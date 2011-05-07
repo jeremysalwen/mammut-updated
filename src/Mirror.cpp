@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 5:07:54 pm
+  Creation date:  7 May 2011 2:30:14pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "Mirror.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Mirror::Mirror ()
@@ -47,7 +49,7 @@ Mirror::Mirror ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
     addAndMakeVisible (description = new Label (T("new label"),
@@ -83,13 +85,17 @@ Mirror::Mirror ()
 
     addAndMakeVisible (resetbutton = new TextButton (T("new button")));
     resetbutton->setButtonText (T("Reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -119,7 +125,10 @@ Mirror::~Mirror()
 //==============================================================================
 void Mirror::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
   fillit();
     //[/UserPaint]
 }
@@ -205,30 +214,33 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="6f88f15a42650a8b" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Mirror" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Mirror" textpos="33"/>
   <TEXTBUTTON name="new button" id="e8889fe7c5dfde93" memberName="textButton"
-              pos="24 48 104 48" bgColOff="25bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="24 48 104 48" bgColOff="25bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="b14eb78e812dabb0" memberName="description"
-         pos="400 40 455 72" bkgCol="0" textCol="ff000000" outlineCol="0"
-         edTextCol="ff000000" edBkgCol="0" labelText="Reflects the whole spectrum around the frequency you specify. "
+         virtualName="" explicitFocusOrder="0" pos="400 40 455 72" bkgCol="0"
+         textCol="ff000000" outlineCol="0" edTextCol="ff000000" edBkgCol="0"
+         labelText="Reflects the whole spectrum around the frequency you specify. "
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <SLIDER name="new slider" id="17b2687f9fce45ec" memberName="mirror_frequencyslider"
-          pos="136 16 696 24" bkgcol="956565" thumbcol="7bfffcfc" textboxbkgd="ffffff"
-          min="0" max="22050" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="14b8f40ddc43014a" memberName="label" pos="16 16 112 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Mirror frequency (Hz)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="136 16 696 24" bkgcol="956565"
+          thumbcol="7bfffcfc" textboxbkgd="ffffff" min="0" max="22050"
+          int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="14b8f40ddc43014a" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 112 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Mirror frequency (Hz)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="fe1f9bbd877bdeae" memberName="resetbutton"
-              pos="232 48 128 48" bgColOff="25bbbbff" buttonText="Reset" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="232 48 128 48" bgColOff="25bbbbff"
+              buttonText="Reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="136 48 80 48" bgColOff="25bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="136 48 80 48" bgColOff="25bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

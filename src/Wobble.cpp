@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:56:17 pm
+  Creation date:  7 May 2011 2:32:23pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,6 +28,8 @@
 #include "Wobble.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Wobble::Wobble ()
@@ -49,7 +51,7 @@ Wobble::Wobble ()
 
     addAndMakeVisible (textButton = new TextButton (T("new button")));
     textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x2ebbbbff));
 
     addAndMakeVisible (label = new Label (T("new label"),
@@ -92,7 +94,7 @@ Wobble::Wobble ()
 
     addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
     resetbutton->setButtonText (T("Reset"));
-    resetbutton->addButtonListener (this);
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x46bbbbff));
 
     addAndMakeVisible (label3 = new Label (T("new label"),
@@ -108,8 +110,12 @@ Wobble::Wobble ()
 
     addAndMakeVisible (textButton2 = new TextButton (T("new button")));
     textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (600, 400);
 
@@ -141,7 +147,10 @@ Wobble::~Wobble()
 //==============================================================================
 void Wobble::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -233,39 +242,42 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="dba13000fbf2e0f5" memberName="groupComponent2"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Wobble" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Wobble" textpos="33"/>
   <TEXTBUTTON name="new button" id="b39ea3e28a629c65" memberName="textButton"
-              pos="432 16 120 24" bgColOff="2ebbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="ceb386e6c991715c" memberName="label" pos="16 16 152 40"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Frequency (0-1000)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+              virtualName="" explicitFocusOrder="0" pos="432 16 120 24" bgColOff="2ebbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="ceb386e6c991715c" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 152 40" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Frequency (0-1000)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <SLIDER name="new slider" id="66883832af628709" memberName="frequencyslider"
-          pos="160 24 272 24" thumbcol="82ffffff" textboxbkgd="ffffff"
-          min="0" max="1000" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
+          virtualName="" explicitFocusOrder="0" pos="160 24 272 24" thumbcol="82ffffff"
+          textboxbkgd="ffffff" min="0" max="1000" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
   <SLIDER name="new slider" id="86615975c7634108" memberName="amplitudeslider"
-          pos="160 64 272 24" thumbcol="86ffffff" textboxbkgd="ffffff"
-          min="0" max="1" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="5657d1ea6f6d6fe2" memberName="label2" pos="16 64 150 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Amplitude (0-1)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="160 64 272 24" thumbcol="86ffffff"
+          textboxbkgd="ffffff" min="0" max="1" int="0" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="5657d1ea6f6d6fe2" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="16 64 150 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Amplitude (0-1)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="resetbutton" id="3edbeb65e70e7a8c" memberName="resetbutton"
-              pos="432 72 120 24" bgColOff="46bbbbff" buttonText="Reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="3deaf40851d20cb1" memberName="label3" pos="560 0 272 120"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="&#10;All frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. &#10;&#10;&#10;"
+              virtualName="" explicitFocusOrder="0" pos="432 72 120 24" bgColOff="46bbbbff"
+              buttonText="Reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="3deaf40851d20cb1" memberName="label3" virtualName=""
+         explicitFocusOrder="0" pos="560 0 272 120" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="&#10;All frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. &#10;&#10;&#10;"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="11.2" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="432 43 121 24" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="432 43 121 24" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

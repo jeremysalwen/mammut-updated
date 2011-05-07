@@ -3,11 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  11 Feb 2007 11:30:46 pm
+  Creation date:  7 May 2011 2:31:05pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
+
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -26,6 +28,8 @@
 #include "Prefs.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Prefs::Prefs ()
@@ -38,33 +42,37 @@ Prefs::Prefs ()
 {
     addAndMakeVisible (soundonoffButton = new ToggleButton (T("new toggle button")));
     soundonoffButton->setButtonText (T("Startup Sound"));
-    soundonoffButton->addButtonListener (this);
+    soundonoffButton->addListener (this);
     soundonoffButton->setToggleState (true, false);
 
     addAndMakeVisible (movingcameraButton = new ToggleButton (T("new toggle button")));
     movingcameraButton->setButtonText (T("Moving Camera"));
-    movingcameraButton->addButtonListener (this);
+    movingcameraButton->addListener (this);
     movingcameraButton->setToggleState (true, false);
 
     addAndMakeVisible (animationButton = new ToggleButton (T("new toggle button")));
     animationButton->setButtonText (T("Animation"));
-    animationButton->addButtonListener (this);
+    animationButton->addListener (this);
     animationButton->setToggleState (true, false);
 
     addAndMakeVisible (pictureButton = new ToggleButton (T("new toggle button")));
     pictureButton->setButtonText (T("Background Picture"));
-    pictureButton->addButtonListener (this);
+    pictureButton->addListener (this);
     pictureButton->setToggleState (true, false);
 
     addAndMakeVisible (loopButton = new ToggleButton (T("new toggle button")));
     loopButton->setButtonText (T("Loop playing"));
-    loopButton->addButtonListener (this);
+    loopButton->addListener (this);
     loopButton->setToggleState (true, false);
 
     addAndMakeVisible (audioSettingsButton = new TextButton (T("new button")));
     audioSettingsButton->setButtonText (T("Audio Settings"));
-    audioSettingsButton->addButtonListener (this);
+    audioSettingsButton->addListener (this);
     audioSettingsButton->setColour (TextButton::buttonColourId, Colour (0x21bbbbff));
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
 
     setSize (200, 230);
 
@@ -101,9 +109,12 @@ Prefs::~Prefs()
 //==============================================================================
 void Prefs::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
     g.fillAll (Colour (0x9cb1886c));
 
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
 
@@ -121,6 +132,9 @@ void Prefs::resized()
 
 void Prefs::buttonClicked (Button* buttonThatWasClicked)
 {
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
     if (buttonThatWasClicked == soundonoffButton)
     {
         //[UserButtonCode_soundonoffButton] -- add your button handler code here..
@@ -177,6 +191,9 @@ void Prefs::buttonClicked (Button* buttonThatWasClicked)
       juceplay_prefs();
         //[/UserButtonCode_audioSettingsButton]
     }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -203,23 +220,25 @@ BEGIN_JUCER_METADATA
                  snapShown="1" overlayOpacity="0.330000013" fixedSize="0" initialWidth="200"
                  initialHeight="230">
   <BACKGROUND backgroundColour="9cb1886c"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="soundonoffButton" pos="32 24 150 24"
-                buttonText="Startup Sound" connectedEdges="0" needsCallback="1"
-                state="1"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="movingcameraButton" pos="32 120 150 24"
-                buttonText="Moving Camera" connectedEdges="0" needsCallback="1"
-                state="1"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="animationButton" pos="32 88 150 24"
-                buttonText="Animation" connectedEdges="0" needsCallback="1" state="1"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="pictureButton" pos="32 56 150 24"
-                buttonText="Background Picture" connectedEdges="0" needsCallback="1"
-                state="1"/>
-  <TOGGLEBUTTON name="new toggle button" memberName="loopButton" pos="32 152 150 24"
-                buttonText="Loop playing" connectedEdges="0" needsCallback="1"
-                state="1"/>
-  <TEXTBUTTON name="new button" memberName="audioSettingsButton" pos="24 192 158 24"
-              bgColOff="21bbbbff" buttonText="Audio Settings" connectedEdges="0"
-              needsCallback="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="3005e7bf49941d9f" memberName="soundonoffButton"
+                virtualName="" explicitFocusOrder="0" pos="32 24 150 24" buttonText="Startup Sound"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="e1c33b935f0cd714" memberName="movingcameraButton"
+                virtualName="" explicitFocusOrder="0" pos="32 120 150 24" buttonText="Moving Camera"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="e932c08208ef1e21" memberName="animationButton"
+                virtualName="" explicitFocusOrder="0" pos="32 88 150 24" buttonText="Animation"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="f438bc4322b0597b" memberName="pictureButton"
+                virtualName="" explicitFocusOrder="0" pos="32 56 150 24" buttonText="Background Picture"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="1"/>
+  <TOGGLEBUTTON name="new toggle button" id="68e8c733ea45fe96" memberName="loopButton"
+                virtualName="" explicitFocusOrder="0" pos="32 152 150 24" buttonText="Loop playing"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="1"/>
+  <TEXTBUTTON name="new button" id="e0e3735ae72a6fee" memberName="audioSettingsButton"
+              virtualName="" explicitFocusOrder="0" pos="24 192 158 24" bgColOff="21bbbbff"
+              buttonText="Audio Settings" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
