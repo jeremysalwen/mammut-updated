@@ -514,7 +514,7 @@ void Interface::paint (Graphics& g)
     uint32 starttime=Time::getMillisecondCounter();
 
     if(lyd==NULL && prefscomponent->firstRun_questionmark()==true){
-      static Image *internalCachedImage4 = ImageCache::getFromMemory (temp_png, temp_pngSize);
+      static Image internalCachedImage4 = ImageCache::getFromMemory (temp_png, temp_pngSize);
       g.setColour (Colours::black.withAlpha (1.0f));//0.5140f));
       g.drawImage (internalCachedImage4,
 		   -8, 640, 384, 104,
@@ -1063,7 +1063,7 @@ bool Interface::loadFile(char *das_filename){
 
 #if 0
 void Interface::run(){
-  Graphics g(*tempimage);
+  Graphics g(tempimage);
 
   setPriority(0);
   setCurrentThreadPriority(10);
@@ -1088,7 +1088,7 @@ void Interface::run(){
 
 void Interface::timerCallback(){
   static bool wasplaying=false;
-  static Image *ims[3]={
+  static Image ims[3]={
     PictureHolder::getImage(0),
     PictureHolder::getImage(1),
     PictureHolder::getImage(2)
@@ -1220,7 +1220,7 @@ void Interface::timerCallback(){
     static uint32 nexttime=0;
     if(time>=nexttime){
       for(int i=0;i<1000;i++){
-	Image *newim=ims[random->nextInt(3)];
+	Image newim=ims[random->nextInt(3)];
 	if(newim!=internalCachedImage3){
 	  internalCachedImage3=newim;
 	  mustpaint=true;
