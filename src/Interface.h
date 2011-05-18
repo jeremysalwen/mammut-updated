@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:28:54pm
+  Creation date:  18 May 2011 5:58:09pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_INTERFACE_INTERFACE_4BAF9A9D__
-#define __JUCER_HEADER_INTERFACE_INTERFACE_4BAF9A9D__
+#ifndef __JUCER_HEADER_INTERFACE_INTERFACE_DA8337ED__
+#define __JUCER_HEADER_INTERFACE_INTERFACE_DA8337ED__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -73,6 +73,7 @@ public:
     // Binary resources:
     static const char* temp_png;
     static const int temp_pngSize;
+
 
     //==============================================================================
     juce_UseDebuggingNewOperator
@@ -135,6 +136,7 @@ private:
     TextButton* aboutbutton;
     TextButton* prefsbutton;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Interface (const Interface&);
@@ -142,4 +144,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_INTERFACE_INTERFACE_4BAF9A9D__
+#endif   // __JUCER_HEADER_INTERFACE_INTERFACE_DA8337ED__
