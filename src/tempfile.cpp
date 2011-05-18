@@ -101,7 +101,7 @@ static char *TF_getPath(void){
     sprintf(ret, "%s/", TEMPDIR );
   }else
 #endif
-    sprintf(ret,"%s",File::getSpecialLocation(File::tempDirectory).getFullPathName().toUTF8());
+    sprintf(ret,"%s",File::getSpecialLocation(File::tempDirectory).getFullPathName().toUTF8().getAddress());
 
 
   return ret;
@@ -203,7 +203,7 @@ struct TempFile *TF_new(char *firstname){
 #endif
     {
       File temptempfile=File::createTempFile("mammut_temp");
-      snprintf(temp,4990,"%s",temptempfile.getFullPathName().toUTF8());
+      snprintf(temp,4990,"%s",temptempfile.getFullPathName().toUTF8().getAddress());
       printf("Creating new tempfile \"%s\"n",temp);
       //temptempfile.deleteFile();
     }

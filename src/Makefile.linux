@@ -88,7 +88,7 @@ CC=$(GCC)
 #ADDITIONALCFLAGS will be added to the CFLAGS line.
 #ADDITIONALLDFLAGS will be added to the LDFLAGS line.
 
-ADDITIONALCFLAGS= -O2 -I/site/include -I/usr/local/include -DHAVE_JACK --fast-math  -D "NDEBUG=1"
+ADDITIONALCFLAGS= -O2 -I/site/include -I/usr/local/include -DHAVE_JACK --fast-math  -D "NDEBUG=1" -fno-strict-aliasing
 # -g -ggdb
 ADDITIONALLDFLAGS=-L../../juce/Builds/Linux/build/ -L/usr/local/include -lsndfile -lm -lpthread -ldl -L. -ljack -lsamplerate -lrt
 # -L$(SOUNDLIBNAME)
@@ -109,7 +109,7 @@ LDFLAGS= $(ADDITIONALLDFLAGS)  -lvorbisfile
 CPPFLAGS := -MD -D "LINUX=1" -I "/usr/include" -I$(JUCE)  -DTEMPDIR=\"$(TEMPDIR)\" $(CFLAGS)
 CFLAGS	 += $(CPPFLAGS)
 CXXFLAGS := $(CFLAGS)
-LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -L "/usr/X11R6/lib/" -lfreetype -lpthread -lX11 -lXext -lGL  -lXinerama -lasound -ljucedebug
+LDFLAGS +=  -L "/usr/X11R6/lib/" -lfreetype -lpthread -lX11 -lXext -lGL  -lXinerama -lasound -ljucedebug
 #_debug
 
 
