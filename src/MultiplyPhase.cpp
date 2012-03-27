@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:30:23pm
+  Creation date:  27 Mar 2012 12:22:50am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 MultiplyPhase::MultiplyPhase ()
-    : Component (T("MultiplyPhase")),
+    : Component (L"MultiplyPhase"),
       groupComponent (0),
       phase_multiplierslider (0),
       label (0),
@@ -43,12 +43,12 @@ MultiplyPhase::MultiplyPhase ()
       textButton2 (0),
       randomButton (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Multiply Phase")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Multiply Phase"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (phase_multiplierslider = new Slider (T("new slider")));
+    addAndMakeVisible (phase_multiplierslider = new Slider (L"new slider"));
     phase_multiplierslider->setRange (-5, 5, 0);
     phase_multiplierslider->setSliderStyle (Slider::LinearHorizontal);
     phase_multiplierslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -58,8 +58,8 @@ MultiplyPhase::MultiplyPhase ()
     phase_multiplierslider->setColour (Slider::textBoxHighlightColourId, Colour (0x251111ee));
     phase_multiplierslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Phase multiplier (-5 5)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Phase multiplier (-5 5)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -69,18 +69,18 @@ MultiplyPhase::MultiplyPhase ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x18bbbbff));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Multiply all phases with the value you specify. A value of -1 will reverse the sound.\n")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Multiply all phases with the value you specify. A value of -1 will reverse the sound.\n"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -90,13 +90,13 @@ MultiplyPhase::MultiplyPhase ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x18bbbbff));
 
-    addAndMakeVisible (randomButton = new ToggleButton (T("new toggle button")));
-    randomButton->setButtonText (T("Random Phases"));
+    addAndMakeVisible (randomButton = new ToggleButton (L"new toggle button"));
+    randomButton->setButtonText (L"Random Phases");
     randomButton->addListener (this);
 
 
@@ -104,6 +104,7 @@ MultiplyPhase::MultiplyPhase ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
 #undef Slider
@@ -124,6 +125,7 @@ MultiplyPhase::~MultiplyPhase()
     deleteAndZero (label2);
     deleteAndZero (textButton2);
     deleteAndZero (randomButton);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

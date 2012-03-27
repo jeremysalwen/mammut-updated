@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:30:23pm
+  Creation date:  27 Mar 2012 12:22:50am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_D81A25AB__
-#define __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_D81A25AB__
+#ifndef __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_9DEC903B__
+#define __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_9DEC903B__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -72,6 +73,7 @@ private:
     TextButton* textButton2;
     ToggleButton* randomButton;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     MultiplyPhase (const MultiplyPhase&);
@@ -79,4 +81,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_D81A25AB__
+#endif   // __JUCER_HEADER_MULTIPLYPHASE_MULTIPLYPHASE_9DEC903B__

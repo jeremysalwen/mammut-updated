@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:22pm
+  Creation date:  27 Mar 2012 12:21:51am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_WOBBLE_WOBBLE_B74A226C__
-#define __JUCER_HEADER_WOBBLE_WOBBLE_B74A226C__
+#ifndef __JUCER_HEADER_WOBBLE_WOBBLE_DE9E48BE__
+#define __JUCER_HEADER_WOBBLE_WOBBLE_DE9E48BE__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void sliderValueChanged (Slider* sliderThatWasMoved);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -73,6 +74,7 @@ private:
     Label* label3;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Wobble (const Wobble&);
@@ -80,4 +82,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_WOBBLE_WOBBLE_B74A226C__
+#endif   // __JUCER_HEADER_WOBBLE_WOBBLE_DE9E48BE__

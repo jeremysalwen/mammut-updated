@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:28:01pm
+  Creation date:  27 Mar 2012 12:25:24am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 DerivativeAmp::DerivativeAmp ()
-    : Component (T("DerivativeAmp")),
+    : Component (L"DerivativeAmp"),
       groupComponent (0),
       amp_derivate_multiplierslider (0),
       label (0),
@@ -42,12 +42,12 @@ DerivativeAmp::DerivativeAmp ()
       label2 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Derivate Amp")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Derivate Amp"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (amp_derivate_multiplierslider = new Slider (T("new slider")));
+    addAndMakeVisible (amp_derivate_multiplierslider = new Slider (L"new slider"));
     amp_derivate_multiplierslider->setRange (-5, 5, 0);
     amp_derivate_multiplierslider->setSliderStyle (Slider::LinearHorizontal);
     amp_derivate_multiplierslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -56,8 +56,8 @@ DerivativeAmp::DerivativeAmp ()
     amp_derivate_multiplierslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     amp_derivate_multiplierslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Amp derivate multiplier (-5 5)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Amp derivate multiplier (-5 5)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -67,18 +67,18 @@ DerivativeAmp::DerivativeAmp ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x39bbbbff));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x42bbbbff));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Replaces the amplitude spectrum with its derivative (slope). You may specify a gain factor.\n")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Replaces the amplitude spectrum with its derivative (slope). You may specify a gain factor.\n"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -88,8 +88,8 @@ DerivativeAmp::DerivativeAmp ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -98,6 +98,7 @@ DerivativeAmp::DerivativeAmp ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -117,6 +118,7 @@ DerivativeAmp::~DerivativeAmp()
     deleteAndZero (resetbutton);
     deleteAndZero (label2);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

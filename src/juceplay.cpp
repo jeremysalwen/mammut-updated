@@ -197,8 +197,8 @@ public:
     if (audioDeviceManager.getCurrentAudioDevice()==NULL || error.isNotEmpty())
       {
 	AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-				     T("Mammut"),
-				     T("Couldn't open an output device!\n\n") + error);
+				     "Mammut",
+				     "Couldn't open an output device!\n\n" + error);
       }
     else
       {
@@ -498,7 +498,7 @@ public:
     // ...and show it in a DialogWindow...
     audioSettingsComp.setSize (400, 170);
     
-    DialogWindow::showModalDialog (T("Audio Settings"),
+    DialogWindow::showModalDialog ("Audio Settings",
 				   &audioSettingsComp,
 				   NULL,Colour((uint8)0xb90,(uint8)0x60,(uint8)0x60,(uint8)0xd0),true);
     if(audioDeviceManager.getCurrentAudioDevice()==NULL && isreadingdata==true){

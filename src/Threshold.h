@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:58:05 pm
+  Creation date:  27 Mar 2012 12:26:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_THRESHOLD_THRESHOLD_2E84FC8B__
-#define __JUCER_HEADER_THRESHOLD_THRESHOLD_2E84FC8B__
+#ifndef __JUCER_HEADER_THRESHOLD_THRESHOLD_85FC92C1__
+#define __JUCER_HEADER_THRESHOLD_THRESHOLD_85FC92C1__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -72,6 +73,7 @@ private:
     Label* label2;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Threshold (const Threshold&);
@@ -79,4 +81,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_THRESHOLD_THRESHOLD_2E84FC8B__
+#endif   // __JUCER_HEADER_THRESHOLD_THRESHOLD_85FC92C1__

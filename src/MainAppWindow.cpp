@@ -34,7 +34,7 @@
 
 //==============================================================================
 MainAppWindow::MainAppWindow(const String& commandLine)
-  :	DocumentWindow (T("Mammut"), 
+  :	DocumentWindow ("Mammut", 
 			Colours::lightgrey, 
 			DocumentWindow::allButtons,
 			true)

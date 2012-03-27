@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:49pm
+  Creation date:  27 Mar 2012 12:28:11am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 Stereo::Stereo ()
-    : Component (T("Stereo")),
+    : Component (L"Stereo"),
       groupComponent3 (0),
       groupComponent2 (0),
       swapphasesbutton (0),
@@ -44,32 +44,32 @@ Stereo::Stereo ()
       label2 (0),
       resetbutton (0)
 {
-    addAndMakeVisible (groupComponent3 = new GroupComponent (T("new group"),
-                                                             T("Swap Phases")));
+    addAndMakeVisible (groupComponent3 = new GroupComponent (L"new group",
+                                                             L"Swap Phases"));
 
-    addAndMakeVisible (groupComponent2 = new GroupComponent (T("new group"),
-                                                             T("Stereo")));
+    addAndMakeVisible (groupComponent2 = new GroupComponent (L"new group",
+                                                             L"Stereo"));
     groupComponent2->setTextLabelPosition (Justification::centredLeft);
     groupComponent2->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (swapphasesbutton = new TextButton (T("new button")));
-    swapphasesbutton->setTooltip (T("The phases, but not the amplitudes, are interchanged between the two channels."));
-    swapphasesbutton->setButtonText (T("Do it!"));
+    addAndMakeVisible (swapphasesbutton = new TextButton (L"new button"));
+    swapphasesbutton->setTooltip (L"The phases, but not the amplitudes, are interchanged between the two channels.");
+    swapphasesbutton->setButtonText (L"Do it!");
     swapphasesbutton->addListener (this);
     swapphasesbutton->setColour (TextButton::buttonColourId, Colour (0x33bbbbff));
 
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Crossover")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Crossover"));
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0x6c000000));
 
-    addAndMakeVisible (crossoverbutton = new TextButton (T("new button")));
-    crossoverbutton->setTooltip (T("Swaps blocks between the two channels. The probability, for each frequency bin, that the program will switch between swapping and non-swapping mode as it runs through all the bins, must be specified. Small probability means that large blocks are swapped (or kept)."));
-    crossoverbutton->setButtonText (T("Do it!"));
+    addAndMakeVisible (crossoverbutton = new TextButton (L"new button"));
+    crossoverbutton->setTooltip (L"Swaps blocks between the two channels. The probability, for each frequency bin, that the program will switch between swapping and non-swapping mode as it runs through all the bins, must be specified. Small probability means that large blocks are swapped (or kept).");
+    crossoverbutton->setButtonText (L"Do it!");
     crossoverbutton->addListener (this);
     crossoverbutton->setColour (TextButton::buttonColourId, Colour (0x35bbbbff));
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Switching Probability for Crossover")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Switching Probability for Crossover"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -79,7 +79,7 @@ Stereo::Stereo ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (switching_probabilityslider = new Slider (T("new slider")));
+    addAndMakeVisible (switching_probabilityslider = new Slider (L"new slider"));
     switching_probabilityslider->setRange (0, 1, 0);
     switching_probabilityslider->setSliderStyle (Slider::LinearHorizontal);
     switching_probabilityslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -87,8 +87,8 @@ Stereo::Stereo ()
     switching_probabilityslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     switching_probabilityslider->addListener (this);
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("(Stereo files only)")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"(Stereo files only)"));
     label2->setFont (Font (11.2000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -98,7 +98,7 @@ Stereo::Stereo ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("Reset")));
+    addAndMakeVisible (resetbutton = new TextButton (L"Reset"));
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x23bbbbff));
 
@@ -107,6 +107,7 @@ Stereo::Stereo ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -128,6 +129,7 @@ Stereo::~Stereo()
     deleteAndZero (switching_probabilityslider);
     deleteAndZero (label2);
     deleteAndZero (resetbutton);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

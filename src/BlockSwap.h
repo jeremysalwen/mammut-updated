@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  26 Mar 2012 11:57:59pm
+  Creation date:  27 Mar 2012 12:24:22am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
-#define __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
+#ifndef __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_F9E9406__
+#define __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_F9E9406__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -83,4 +83,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
+#endif   // __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_F9E9406__

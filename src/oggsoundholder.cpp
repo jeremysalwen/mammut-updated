@@ -30,7 +30,7 @@
 
 //==============================================================================
 oggsoundholder::oggsoundholder ()
-    : Component (T("oggsoundholder"))
+    : Component ("oggsoundholder")
 {
 
     //[UserPreSize]

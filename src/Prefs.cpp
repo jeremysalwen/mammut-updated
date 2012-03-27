@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:05pm
+  Creation date:  27 Mar 2012 12:31:22am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -40,33 +40,33 @@ Prefs::Prefs ()
       loopButton (0),
       audioSettingsButton (0)
 {
-    addAndMakeVisible (soundonoffButton = new ToggleButton (T("new toggle button")));
-    soundonoffButton->setButtonText (T("Startup Sound"));
+    addAndMakeVisible (soundonoffButton = new ToggleButton (L"new toggle button"));
+    soundonoffButton->setButtonText (L"Startup Sound");
     soundonoffButton->addListener (this);
     soundonoffButton->setToggleState (true, false);
 
-    addAndMakeVisible (movingcameraButton = new ToggleButton (T("new toggle button")));
-    movingcameraButton->setButtonText (T("Moving Camera"));
+    addAndMakeVisible (movingcameraButton = new ToggleButton (L"new toggle button"));
+    movingcameraButton->setButtonText (L"Moving Camera");
     movingcameraButton->addListener (this);
     movingcameraButton->setToggleState (true, false);
 
-    addAndMakeVisible (animationButton = new ToggleButton (T("new toggle button")));
-    animationButton->setButtonText (T("Animation"));
+    addAndMakeVisible (animationButton = new ToggleButton (L"new toggle button"));
+    animationButton->setButtonText (L"Animation");
     animationButton->addListener (this);
     animationButton->setToggleState (true, false);
 
-    addAndMakeVisible (pictureButton = new ToggleButton (T("new toggle button")));
-    pictureButton->setButtonText (T("Background Picture"));
+    addAndMakeVisible (pictureButton = new ToggleButton (L"new toggle button"));
+    pictureButton->setButtonText (L"Background Picture");
     pictureButton->addListener (this);
     pictureButton->setToggleState (true, false);
 
-    addAndMakeVisible (loopButton = new ToggleButton (T("new toggle button")));
-    loopButton->setButtonText (T("Loop playing"));
+    addAndMakeVisible (loopButton = new ToggleButton (L"new toggle button"));
+    loopButton->setButtonText (L"Loop playing");
     loopButton->addListener (this);
     loopButton->setToggleState (true, false);
 
-    addAndMakeVisible (audioSettingsButton = new TextButton (T("new button")));
-    audioSettingsButton->setButtonText (T("Audio Settings"));
+    addAndMakeVisible (audioSettingsButton = new TextButton (L"new button"));
+    audioSettingsButton->setButtonText (L"Audio Settings");
     audioSettingsButton->addListener (this);
     audioSettingsButton->setColour (TextButton::buttonColourId, Colour (0x21bbbbff));
 
@@ -76,8 +76,17 @@ Prefs::Prefs ()
 
     setSize (200, 230);
 
+
     //[Constructor] You can add your own custom stuff here..
-    propertiesfile=PropertiesFile::createDefaultAppPropertiesFile("mammut",".prefs",String::empty,false,0,PropertiesFile::storeAsXML);
+    PropertiesFile::Options opts;
+    opts.applicationName="mammut";
+    opts.filenameSuffix=".prefs";
+    opts.folderName=String::empty;
+    opts.commonToAllUsers=false;
+    opts.millisecondsBeforeSaving=0;
+    opts.storageFormat=PropertiesFile::storeAsXML;
+    propertiesfile=new PropertiesFile(opts);
+    //propertiesfile=PropertiesFile::createDefaultAppPropertiesFile("mammut",".prefs",String::empty,false,0,PropertiesFile::storeAsXML);
     //propertiesfile->setValue("tes",54);
     //printf("get: -%d-\n",propertiesfile->getIntValue("tes"));
     //printf("Getting: %d\n",propertiesfile->getBoolValue(soundonoffButton->getButtonText(),true)==true?1:0);
@@ -101,6 +110,7 @@ Prefs::~Prefs()
     deleteAndZero (pictureButton);
     deleteAndZero (loopButton);
     deleteAndZero (audioSettingsButton);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:00pm
+  Creation date:  27 Mar 2012 12:24:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_STRETCH_STRETCH_6590255C__
-#define __JUCER_HEADER_STRETCH_STRETCH_6590255C__
+#ifndef __JUCER_HEADER_STRETCH_STRETCH_AA32178F__
+#define __JUCER_HEADER_STRETCH_STRETCH_AA32178F__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -60,6 +60,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -76,6 +77,7 @@ private:
     Label* label2;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Stretch (const Stretch&);
@@ -83,4 +85,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_STRETCH_STRETCH_6590255C__
+#endif   // __JUCER_HEADER_STRETCH_STRETCH_AA32178F__

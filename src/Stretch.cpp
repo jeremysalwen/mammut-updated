@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:00pm
+  Creation date:  27 Mar 2012 12:24:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -35,7 +35,7 @@
 
 //==============================================================================
 Stretch::Stretch ()
-    : Component (T("Stretch")),
+    : Component (L"Stretch"),
       groupComponent (0),
       exponentslider (0),
       label (0),
@@ -44,12 +44,12 @@ Stretch::Stretch ()
       label2 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Stretch")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Stretch"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (exponentslider = new Slider (T("exponentslider")));
+    addAndMakeVisible (exponentslider = new Slider (L"exponentslider"));
     exponentslider->setRange (0.5, 1.5, 0);
     exponentslider->setSliderStyle (Slider::LinearHorizontal);
     exponentslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 30);
@@ -60,8 +60,8 @@ Stretch::Stretch ()
     exponentslider->setColour (Slider::textBoxOutlineColourId, Colours::black);
     exponentslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Exponent")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Exponent"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -71,18 +71,18 @@ Stretch::Stretch ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x957f7f9f));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x3b7d7dab));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("\nAll frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. \n\n")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"\nAll frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. \n\n"));
     label2->setFont (Font (11.2000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -92,8 +92,8 @@ Stretch::Stretch ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x5498908a));
 
@@ -102,6 +102,7 @@ Stretch::Stretch ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -121,6 +122,7 @@ Stretch::~Stretch()
     deleteAndZero (resetbutton);
     deleteAndZero (label2);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

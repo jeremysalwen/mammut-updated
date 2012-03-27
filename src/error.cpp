@@ -17,7 +17,7 @@ void printerror(const char *fmt, ...){
   fprintf(stderr,"Mammut, error: %s\n",temp);
 
   AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-			       T("Mammut"),
+			       "Mammut",
 			       String(temp));
   
   va_end(argp);

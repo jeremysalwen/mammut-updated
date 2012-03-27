@@ -9,7 +9,7 @@ static void (*func)(void)=NULL;
 class MyTask  : public ThreadWithProgressWindow
 {
 public:
-  MyTask()    : ThreadWithProgressWindow (T("busy..."), true, false)
+  MyTask()    : ThreadWithProgressWindow ("busy...", true, false)
   {
   }
   
@@ -47,7 +47,7 @@ class MyProgressBar : public Thread
 {
 
 public:
-  MyProgressBar() : Thread(T("myprogressbar")) {
+  MyProgressBar() : Thread("myprogressbar") {
     is_running=false;
     above_curr=0;
     above_max=1;

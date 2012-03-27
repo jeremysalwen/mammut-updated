@@ -361,7 +361,7 @@ Interface::Interface (DocumentWindow *mainwindow, const String& commandLine)
 
     //addAndMakeVisible(graphcomponent=new GraphComponent(componentplace->getX(),componentplace->getY(),componentplace->getWidth(),componentplace->getHeight()));
     addAndMakeVisible(graphcomponent=new GraphComponent(0,0,20,20));
-    graphcomponent->setName (T("gnew component"));
+    graphcomponent->setName ("gnew component");
     //componentplace->setVisible(false);
 
 
@@ -782,8 +782,8 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 	  char *error=MC_synthAndSave(savefilename);
 	  if(error!=NULL){
 	    AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-					 T("Mammut"),
-					 String(error) + T(" (") + String((const char*)savefilename) + T(")"));
+					 "Mammut",
+					 String(error) + " (" + String((const char*)savefilename) + ")");
 	  }else{
 	    filewasjustsaved=true;
 	    mainwindow->setName(mooseFile.getFullPathName());
@@ -818,7 +818,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 			     "\n",
 			     "Send your comments to k.s.matheussen@notam02.no.\n"};
 
-      AlertWindow::showMessageBox(AlertWindow::InfoIcon,T("Mammut"),StringArray(message,sizeof(message)/sizeof(const char*)).joinIntoString(String::empty));
+      AlertWindow::showMessageBox(AlertWindow::InfoIcon,"Mammut",StringArray(message,sizeof(message)/sizeof(const char*)).joinIntoString(String::empty));
 
         //[/UserButtonCode_aboutbutton]
     }
@@ -1026,8 +1026,8 @@ char *Interface::loadFileMul(char *das_filename){
   char *error=MC_addUndo();
   if(error!=NULL){
     AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-				 T("Mammut"),
-				 String((const char*)error) + T(" (") + loadmulcomboBox->getText() + T(")."));
+				 "Mammut",
+				 String((const char*)error) + " (" + loadmulcomboBox->getText() + ").");
     return error;
   }
 
@@ -1037,8 +1037,8 @@ char *Interface::loadFileMul(char *das_filename){
     GUI_addUndo();
   }else{
     AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-				 T("Mammut"),
-				 String((const char*)error) + T(" (") + loadmulcomboBox->getText() + T(")."));
+				 "Mammut",
+				 String((const char*)error) + " (" + loadmulcomboBox->getText() + ").");
     MC_undo();
   }
   return error;
@@ -1065,12 +1065,12 @@ bool Interface::loadFile(char *das_filename){
 
   if(error!=NULL){
     AlertWindow::showMessageBox (AlertWindow::WarningIcon,
-				 T("Mammut"),
-				 String((const char*)error) + T(" (") + filename + T(")"));
+				 "Mammut",
+				 String((const char*)error) + " (" + filename + ")");
     return false;
   }
 
-  mainwindow->setName(T("Mammut"));
+  mainwindow->setName("Mammut");
 
   MC_resetUndo();
   undoredoslider->setValue(0);

@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:28:20pm
+  Creation date:  27 Mar 2012 12:25:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_FILTER_FILTER_DEA4F313__
-#define __JUCER_HEADER_FILTER_FILTER_DEA4F313__
+#ifndef __JUCER_HEADER_FILTER_FILTER_EE40D4FC__
+#define __JUCER_HEADER_FILTER_FILTER_EE40D4FC__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void sliderValueChanged (Slider* sliderThatWasMoved);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -75,6 +76,7 @@ private:
     Label* label4;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Filter (const Filter&);
@@ -82,4 +84,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_FILTER_FILTER_DEA4F313__
+#endif   // __JUCER_HEADER_FILTER_FILTER_EE40D4FC__

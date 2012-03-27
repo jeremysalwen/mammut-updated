@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:05pm
+  Creation date:  27 Mar 2012 12:31:22am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_PREFS_PREFS_DB775993__
-#define __JUCER_HEADER_PREFS_PREFS_DB775993__
+#ifndef __JUCER_HEADER_PREFS_PREFS_7B5E5145__
+#define __JUCER_HEADER_PREFS_PREFS_7B5E5145__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -70,6 +71,7 @@ private:
     ToggleButton* loopButton;
     TextButton* audioSettingsButton;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Prefs (const Prefs&);
@@ -77,4 +79,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_PREFS_PREFS_DB775993__
+#endif   // __JUCER_HEADER_PREFS_PREFS_7B5E5145__

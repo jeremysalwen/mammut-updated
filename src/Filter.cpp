@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:28:20pm
+  Creation date:  27 Mar 2012 12:25:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 Filter::Filter ()
-    : Component (T("Filter")),
+    : Component (L"Filter"),
       groupComponent (0),
       textButton (0),
       label (0),
@@ -46,18 +46,18 @@ Filter::Filter ()
       label4 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Filter")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Filter"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x42bbbbff));
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Lower cutoff (Hz)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Lower cutoff (Hz)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -67,7 +67,7 @@ Filter::Filter ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (lower_cutoffslider = new Slider (T("new slider")));
+    addAndMakeVisible (lower_cutoffslider = new Slider (L"new slider"));
     lower_cutoffslider->setRange (0, 10000, 0);
     lower_cutoffslider->setSliderStyle (Slider::LinearHorizontal);
     lower_cutoffslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -75,7 +75,7 @@ Filter::Filter ()
     lower_cutoffslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     lower_cutoffslider->addListener (this);
 
-    addAndMakeVisible (upper_cutoffslider = new Slider (T("new slider")));
+    addAndMakeVisible (upper_cutoffslider = new Slider (L"new slider"));
     upper_cutoffslider->setRange (0, 22050, 0);
     upper_cutoffslider->setSliderStyle (Slider::LinearHorizontal);
     upper_cutoffslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -83,8 +83,8 @@ Filter::Filter ()
     upper_cutoffslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     upper_cutoffslider->addListener (this);
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Upper cutoff (Hz)")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Upper cutoff (Hz)"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -94,7 +94,7 @@ Filter::Filter ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (sharpnessslider = new Slider (T("new slider")));
+    addAndMakeVisible (sharpnessslider = new Slider (L"new slider"));
     sharpnessslider->setRange (0, 10, 0);
     sharpnessslider->setSliderStyle (Slider::LinearHorizontal);
     sharpnessslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -102,8 +102,8 @@ Filter::Filter ()
     sharpnessslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     sharpnessslider->addListener (this);
 
-    addAndMakeVisible (label3 = new Label (T("new label"),
-                                           T("Sharpness (0-10)")));
+    addAndMakeVisible (label3 = new Label (L"new label",
+                                           L"Sharpness (0-10)"));
     label3->setFont (Font (15.0000f, Font::plain));
     label3->setJustificationType (Justification::centredLeft);
     label3->setEditable (false, false, false);
@@ -113,13 +113,13 @@ Filter::Filter ()
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x56bbbbff));
 
-    addAndMakeVisible (label4 = new Label (T("new label"),
-                                           T("Optimal bandstop filter. The ultimate in cut-off performance!")));
+    addAndMakeVisible (label4 = new Label (L"new label",
+                                           L"Optimal bandstop filter. The ultimate in cut-off performance!"));
     label4->setFont (Font (12.4000f, Font::plain));
     label4->setJustificationType (Justification::centredLeft);
     label4->setEditable (false, false, false);
@@ -129,8 +129,8 @@ Filter::Filter ()
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -139,6 +139,7 @@ Filter::Filter ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -162,6 +163,7 @@ Filter::~Filter()
     deleteAndZero (resetbutton);
     deleteAndZero (label4);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

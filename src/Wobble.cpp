@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:23pm
+  Creation date:  27 Mar 2012 12:21:51am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 Wobble::Wobble ()
-    : Component (T("Wobble")),
+    : Component (L"Wobble"),
       groupComponent2 (0),
       textButton (0),
       label (0),
@@ -44,18 +44,18 @@ Wobble::Wobble ()
       label3 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent2 = new GroupComponent (T("new group"),
-                                                             T("Wobble")));
+    addAndMakeVisible (groupComponent2 = new GroupComponent (L"new group",
+                                                             L"Wobble"));
     groupComponent2->setTextLabelPosition (Justification::centredLeft);
     groupComponent2->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x2ebbbbff));
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Frequency (0-1000)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Frequency (0-1000)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -65,7 +65,7 @@ Wobble::Wobble ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (frequencyslider = new Slider (T("new slider")));
+    addAndMakeVisible (frequencyslider = new Slider (L"new slider"));
     frequencyslider->setRange (0, 1000, 0);
     frequencyslider->setSliderStyle (Slider::LinearHorizontal);
     frequencyslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -73,7 +73,7 @@ Wobble::Wobble ()
     frequencyslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     frequencyslider->addListener (this);
 
-    addAndMakeVisible (amplitudeslider = new Slider (T("new slider")));
+    addAndMakeVisible (amplitudeslider = new Slider (L"new slider"));
     amplitudeslider->setRange (0, 1, 0);
     amplitudeslider->setSliderStyle (Slider::LinearHorizontal);
     amplitudeslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -81,8 +81,8 @@ Wobble::Wobble ()
     amplitudeslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     amplitudeslider->addListener (this);
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Amplitude (0-1)")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Amplitude (0-1)"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -92,13 +92,13 @@ Wobble::Wobble ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("Reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"Reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x46bbbbff));
 
-    addAndMakeVisible (label3 = new Label (T("new label"),
-                                           T("\nAll frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. \n\n\n")));
+    addAndMakeVisible (label3 = new Label (L"new label",
+                                           L"\nAll frequencies will be raised to the power of the exponent you specify, and the frequency axis is then re-normalized. This is a non-linear stretching of the frequency axis. Values close to 1 (0.9-1.1) are recommended. This transform will produce dispersion effects, with frequency sweeps. \n\n\n"));
     label3->setFont (Font (11.2000f, Font::plain));
     label3->setJustificationType (Justification::centredLeft);
     label3->setEditable (false, false, false);
@@ -108,8 +108,8 @@ Wobble::Wobble ()
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -118,6 +118,7 @@ Wobble::Wobble ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -139,6 +140,7 @@ Wobble::~Wobble()
     deleteAndZero (resetbutton);
     deleteAndZero (label3);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

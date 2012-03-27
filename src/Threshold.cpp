@@ -3,13 +3,13 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  4 Mar 2007 4:58:05 pm
+  Creation date:  27 Mar 2012 12:26:48am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Jucer version: 1.8
+  Jucer version: 1.12
 
   ------------------------------------------------------------------------------
 
@@ -28,10 +28,12 @@
 #include "Threshold.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
 
 //==============================================================================
 Threshold::Threshold ()
-    : Component (T("Threshold")),
+    : Component (L"Threshold"),
       groupComponent (0),
       threshold_levelslider (0),
       label (0),
@@ -41,12 +43,12 @@ Threshold::Threshold ()
       label2 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Threshold")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Threshold"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (threshold_levelslider = new Slider (T("new slider")));
+    addAndMakeVisible (threshold_levelslider = new Slider (L"new slider"));
     threshold_levelslider->setRange (0, 10, 0);
     threshold_levelslider->setSliderStyle (Slider::LinearHorizontal);
     threshold_levelslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -55,8 +57,8 @@ Threshold::Threshold ()
     threshold_levelslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     threshold_levelslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Threshold level (0-10)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Threshold level (0-10)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -66,22 +68,22 @@ Threshold::Threshold ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
-    textButton->addButtonListener (this);
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
+    textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
-    addAndMakeVisible (toggleButton = new ToggleButton (T("new toggle button")));
-    toggleButton->setButtonText (T("Remove above threshold"));
-    toggleButton->addButtonListener (this);
+    addAndMakeVisible (toggleButton = new ToggleButton (L"new toggle button"));
+    toggleButton->setButtonText (L"Remove above threshold");
+    toggleButton->addListener (this);
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
-    resetbutton->addButtonListener (this);
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
+    resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x3bbbbbff));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Removes all partials below a given amplitude threshold.")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Removes all partials below a given amplitude threshold."));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -91,12 +93,17 @@ Threshold::Threshold ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
-    textButton2->addButtonListener (this);
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
+    textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
+
+    //[UserPreSize]
+    //[/UserPreSize]
+
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -118,6 +125,7 @@ Threshold::~Threshold()
     deleteAndZero (label2);
     deleteAndZero (textButton2);
 
+
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]
 }
@@ -125,7 +133,10 @@ Threshold::~Threshold()
 //==============================================================================
 void Threshold::paint (Graphics& g)
 {
-    //[UserPaint] Add your own custom paint stuff here..
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    //[UserPaint] Add your own custom painting code here..
     fillit();
     //[/UserPaint]
 }
@@ -215,33 +226,35 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ffffff"/>
   <GROUPCOMPONENT name="new group" id="a0c06752986786f5" memberName="groupComponent"
-                  pos="0 0 840 112" outlinecol="b0000000" title="Threshold" textpos="33"/>
+                  virtualName="" explicitFocusOrder="0" pos="0 0 840 112" outlinecol="b0000000"
+                  title="Threshold" textpos="33"/>
   <SLIDER name="new slider" id="338be2ed0b970930" memberName="threshold_levelslider"
-          pos="168 16 656 24" bkgcol="956565" thumbcol="6efffcfc" textboxbkgd="ffffff"
-          min="0" max="10" int="0" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20"/>
-  <LABEL name="new label" id="7d14bfd701dd86d5" memberName="label" pos="16 16 240 24"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Threshold level (0-10)" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" bold="0" italic="0" justification="33"/>
+          virtualName="" explicitFocusOrder="0" pos="168 16 656 24" bkgcol="956565"
+          thumbcol="6efffcfc" textboxbkgd="ffffff" min="0" max="10" int="0"
+          style="LinearHorizontal" textBoxPos="TextBoxLeft" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
+  <LABEL name="new label" id="7d14bfd701dd86d5" memberName="label" virtualName=""
+         explicitFocusOrder="0" pos="16 16 240 24" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Threshold level (0-10)"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="e0dac73878d1d3fd" memberName="textButton"
-              pos="200 48 192 56" bgColOff="40bbbbff" buttonText="Do it!" connectedEdges="0"
-              needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="200 48 192 56" bgColOff="40bbbbff"
+              buttonText="Do it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="new toggle button" id="5b39c2ca0662e413" memberName="toggleButton"
-                pos="16 48 168 56" buttonText="Remove above threshold" connectedEdges="0"
-                needsCallback="1" state="0"/>
+                virtualName="" explicitFocusOrder="0" pos="16 48 168 56" buttonText="Remove above threshold"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TEXTBUTTON name="resetbutton" id="36e6d82508df27b0" memberName="resetbutton"
-              pos="472 80 150 24" bgColOff="3bbbbbff" buttonText="reset" connectedEdges="0"
-              needsCallback="1"/>
-  <LABEL name="new label" id="f7781de0ab40b4c0" memberName="label2" pos="656 48 184 56"
-         bkgCol="0" textCol="ff000000" outlineCol="0" edTextCol="ff000000"
-         edBkgCol="0" labelText="Removes all partials below a given amplitude threshold."
+              virtualName="" explicitFocusOrder="0" pos="472 80 150 24" bgColOff="3bbbbbff"
+              buttonText="reset" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="f7781de0ab40b4c0" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="656 48 184 56" bkgCol="0" textCol="ff000000"
+         outlineCol="0" edTextCol="ff000000" edBkgCol="0" labelText="Removes all partials below a given amplitude threshold."
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default font" fontsize="15" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="new button" id="10562b9b17841d7c" memberName="textButton2"
-              pos="392 48 72 56" bgColOff="40bbbbff" buttonText="Redo it!"
-              connectedEdges="0" needsCallback="1"/>
+              virtualName="" explicitFocusOrder="0" pos="392 48 72 56" bgColOff="40bbbbff"
+              buttonText="Redo it!" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
