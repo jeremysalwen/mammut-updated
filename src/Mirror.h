@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:30:14pm
+  Creation date:  26 Mar 2012 11:59:02pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_MIRROR_MIRROR_8B755A9A__
-#define __JUCER_HEADER_MIRROR_MIRROR_8B755A9A__
+#ifndef __JUCER_HEADER_MIRROR_MIRROR_DA254CD3__
+#define __JUCER_HEADER_MIRROR_MIRROR_DA254CD3__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void sliderValueChanged (Slider* sliderThatWasMoved);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -71,6 +72,7 @@ private:
     TextButton* resetbutton;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Mirror (const Mirror&);
@@ -78,4 +80,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_MIRROR_MIRROR_8B755A9A__
+#endif   // __JUCER_HEADER_MIRROR_MIRROR_DA254CD3__

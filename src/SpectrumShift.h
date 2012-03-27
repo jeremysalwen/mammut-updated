@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:24pm
+  Creation date:  26 Mar 2012 11:57:49pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_6847F443__
-#define __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_6847F443__
+#ifndef __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_952EA14A__
+#define __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_952EA14A__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -71,6 +72,7 @@ private:
     Label* label2;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     SpectrumShift (const SpectrumShift&);
@@ -78,4 +80,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_6847F443__
+#endif   // __JUCER_HEADER_SPECTRUMSHIFT_SPECTRUMSHIFT_952EA14A__

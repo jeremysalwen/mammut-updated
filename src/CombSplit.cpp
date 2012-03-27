@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:27:36pm
+  Creation date:  26 Mar 2012 11:59:30pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 CombSplit::CombSplit ()
-    : Component (T("CombSplit")),
+    : Component (L"CombSplit"),
       groupComponent (0),
       textButton (0),
       label (0),
@@ -43,18 +43,18 @@ CombSplit::CombSplit ()
       resetbutton (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Comb Split")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Comb Split"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x2ebbbbff));
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Block size (# of bins)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Block size (# of bins)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -64,7 +64,7 @@ CombSplit::CombSplit ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (block_sizeslider = new Slider (T("new slider")));
+    addAndMakeVisible (block_sizeslider = new Slider (L"new slider"));
     block_sizeslider->setRange (0, 99, 1);
     block_sizeslider->setSliderStyle (Slider::LinearHorizontal);
     block_sizeslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -72,7 +72,7 @@ CombSplit::CombSplit ()
     block_sizeslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     block_sizeslider->addListener (this);
 
-    addAndMakeVisible (number_of_filesslider = new Slider (T("new slider")));
+    addAndMakeVisible (number_of_filesslider = new Slider (L"new slider"));
     number_of_filesslider->setRange (1, 10, 1);
     number_of_filesslider->setSliderStyle (Slider::LinearHorizontal);
     number_of_filesslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -80,8 +80,8 @@ CombSplit::CombSplit ()
     number_of_filesslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     number_of_filesslider->addListener (this);
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Number of files")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Number of files"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -91,13 +91,13 @@ CombSplit::CombSplit ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x35bbbbff));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -106,6 +106,7 @@ CombSplit::CombSplit ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -126,6 +127,7 @@ CombSplit::~CombSplit()
     deleteAndZero (label2);
     deleteAndZero (resetbutton);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

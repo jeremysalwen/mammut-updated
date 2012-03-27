@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:24pm
+  Creation date:  26 Mar 2012 11:57:49pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 SpectrumShift::SpectrumShift ()
-    : Component (T("SpectrumShift")),
+    : Component (L"SpectrumShift"),
       groupComponent (0),
       shift_valueslider (0),
       label (0),
@@ -42,12 +42,12 @@ SpectrumShift::SpectrumShift ()
       label2 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Spectrum Shift")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Spectrum Shift"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (shift_valueslider = new Slider (T("new slider")));
+    addAndMakeVisible (shift_valueslider = new Slider (L"new slider"));
     shift_valueslider->setRange (-22050, 22050, 0);
     shift_valueslider->setSliderStyle (Slider::LinearHorizontal);
     shift_valueslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -56,8 +56,8 @@ SpectrumShift::SpectrumShift ()
     shift_valueslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     shift_valueslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Shift value (Hz)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Shift value (Hz)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -67,18 +67,18 @@ SpectrumShift::SpectrumShift ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x44bbbbff));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("Optimal spectrum shift, with no window artefacts. The frequency you specify (positive or negative) will be added to all frequency values, shifting the spectrum up or down.")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"Optimal spectrum shift, with no window artefacts. The frequency you specify (positive or negative) will be added to all frequency values, shifting the spectrum up or down."));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -88,8 +88,8 @@ SpectrumShift::SpectrumShift ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -98,6 +98,7 @@ SpectrumShift::SpectrumShift ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -117,6 +118,7 @@ SpectrumShift::~SpectrumShift()
     deleteAndZero (resetbutton);
     deleteAndZero (label2);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

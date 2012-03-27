@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:28:25pm
+  Creation date:  26 Mar 2012 11:59:24pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 Gain::Gain ()
-    : Component (T("Gain")),
+    : Component (L"Gain"),
       groupComponent (0),
       amplitude_multiplierslider (0),
       label (0),
@@ -42,12 +42,12 @@ Gain::Gain ()
       label2 (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Gain")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Gain"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (amplitude_multiplierslider = new Slider (T("new slider")));
+    addAndMakeVisible (amplitude_multiplierslider = new Slider (L"new slider"));
     amplitude_multiplierslider->setRange (0, 100, 0);
     amplitude_multiplierslider->setSliderStyle (Slider::LinearHorizontal);
     amplitude_multiplierslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -56,8 +56,8 @@ Gain::Gain ()
     amplitude_multiplierslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     amplitude_multiplierslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Amplitude multiplier (0-100)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Amplitude multiplier (0-100)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -67,18 +67,18 @@ Gain::Gain ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x39bbbbff));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("resetbutton")));
-    resetbutton->setButtonText (T("reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"resetbutton"));
+    resetbutton->setButtonText (L"reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
-    addAndMakeVisible (label2 = new Label (T("new label"),
-                                           T("A highly useful function, because many of the transforms will change the gain and the spectrum may have to be re-scaled manually. (An alternative is to use the \"normalize\" button)")));
+    addAndMakeVisible (label2 = new Label (L"new label",
+                                           L"A highly useful function, because many of the transforms will change the gain and the spectrum may have to be re-scaled manually. (An alternative is to use the \"normalize\" button)"));
     label2->setFont (Font (15.0000f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
@@ -88,8 +88,8 @@ Gain::Gain ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x40bbbbff));
 
@@ -98,6 +98,7 @@ Gain::Gain ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -117,6 +118,7 @@ Gain::~Gain()
     deleteAndZero (resetbutton);
     deleteAndZero (label2);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

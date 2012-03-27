@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:34pm
+  Creation date:  27 Mar 2012 12:00:02am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_ZOOM_ZOOM_8F6FDAF4__
-#define __JUCER_HEADER_ZOOM_ZOOM_8F6FDAF4__
+#ifndef __JUCER_HEADER_ZOOM_ZOOM_AD8CC7F8__
+#define __JUCER_HEADER_ZOOM_ZOOM_AD8CC7F8__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -53,6 +53,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -66,6 +67,7 @@ private:
     TextButton* zoomleft;
     TextButton* zoomright;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     Zoom (const Zoom&);
@@ -73,4 +75,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_ZOOM_ZOOM_8F6FDAF4__
+#endif   // __JUCER_HEADER_ZOOM_ZOOM_AD8CC7F8__

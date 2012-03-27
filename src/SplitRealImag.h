@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:33pm
+  Creation date:  26 Mar 2012 11:59:36pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__
-#define __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__
+#ifndef __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_882C8D4F__
+#define __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_882C8D4F__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -53,6 +53,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -64,6 +65,7 @@ private:
     GroupComponent* groupComponent;
     TextButton* textButton;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     SplitRealImag (const SplitRealImag&);
@@ -71,4 +73,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_8843082D__
+#endif   // __JUCER_HEADER_SPLITREALIMAG_SPLITREALIMAG_882C8D4F__

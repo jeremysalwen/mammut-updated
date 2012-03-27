@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:32:34pm
+  Creation date:  27 Mar 2012 12:00:02am
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -31,31 +31,31 @@
 
 //==============================================================================
 Zoom::Zoom ()
-    : Component (T("Zoom")),
+    : Component (L"Zoom"),
       groupComponent2 (0),
       zoomtoggle (0),
       zoomleft (0),
       zoomright (0)
 {
-    addAndMakeVisible (groupComponent2 = new GroupComponent (T("new group"),
-                                                             T("Zoom")));
+    addAndMakeVisible (groupComponent2 = new GroupComponent (L"new group",
+                                                             L"Zoom"));
     groupComponent2->setTextLabelPosition (Justification::centredLeft);
     groupComponent2->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (zoomtoggle = new ToggleButton (T("new toggle button")));
-    zoomtoggle->setButtonText (T("Zoom"));
+    addAndMakeVisible (zoomtoggle = new ToggleButton (L"new toggle button"));
+    zoomtoggle->setButtonText (L"Zoom");
     zoomtoggle->addListener (this);
 
-    addAndMakeVisible (zoomleft = new TextButton (T("Play")));
-    zoomleft->setButtonText (T("<"));
+    addAndMakeVisible (zoomleft = new TextButton (L"Play"));
+    zoomleft->setButtonText (L"<");
     zoomleft->setConnectedEdges (Button::ConnectedOnRight);
     zoomleft->addListener (this);
     zoomleft->setColour (TextButton::buttonColourId, Colour (0x7bb46b1f));
     zoomleft->setColour (TextButton::buttonOnColourId, Colour (0xff4444ff));
     zoomleft->setColour (TextButton::textColourOnId, Colours::black);
 
-    addAndMakeVisible (zoomright = new TextButton (T("Play")));
-    zoomright->setButtonText (T(">"));
+    addAndMakeVisible (zoomright = new TextButton (L"Play"));
+    zoomright->setButtonText (L">");
     zoomright->setConnectedEdges (Button::ConnectedOnLeft);
     zoomright->addListener (this);
     zoomright->setColour (TextButton::buttonColourId, Colour (0x8fab6e38));
@@ -67,6 +67,7 @@ Zoom::Zoom ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     //[/Constructor]
@@ -81,6 +82,7 @@ Zoom::~Zoom()
     deleteAndZero (zoomtoggle);
     deleteAndZero (zoomleft);
     deleteAndZero (zoomright);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

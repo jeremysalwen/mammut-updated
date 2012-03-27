@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:27:36pm
+  Creation date:  26 Mar 2012 11:59:30pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_COMBSPLIT_COMBSPLIT_B7B16A52__
-#define __JUCER_HEADER_COMBSPLIT_COMBSPLIT_B7B16A52__
+#ifndef __JUCER_HEADER_COMBSPLIT_COMBSPLIT_1B395187__
+#define __JUCER_HEADER_COMBSPLIT_COMBSPLIT_1B395187__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void sliderValueChanged (Slider* sliderThatWasMoved);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -72,6 +73,7 @@ private:
     TextButton* resetbutton;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     CombSplit (const CombSplit&);
@@ -79,4 +81,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_COMBSPLIT_COMBSPLIT_B7B16A52__
+#endif   // __JUCER_HEADER_COMBSPLIT_COMBSPLIT_1B395187__

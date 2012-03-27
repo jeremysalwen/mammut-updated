@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:31:33pm
+  Creation date:  26 Mar 2012 11:59:36pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -31,17 +31,17 @@
 
 //==============================================================================
 SplitRealImag::SplitRealImag ()
-    : Component (T("SplitRealImag")),
+    : Component (L"SplitRealImag"),
       groupComponent (0),
       textButton (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Slit Real/Imag")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Slit Real/Imag"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x37bbbbff));
 
@@ -50,6 +50,7 @@ SplitRealImag::SplitRealImag ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     //[/Constructor]
@@ -62,6 +63,7 @@ SplitRealImag::~SplitRealImag()
 
     deleteAndZero (groupComponent);
     deleteAndZero (textButton);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

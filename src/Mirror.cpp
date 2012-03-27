@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:30:14pm
+  Creation date:  26 Mar 2012 11:59:02pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -33,7 +33,7 @@
 
 //==============================================================================
 Mirror::Mirror ()
-    : Component (T("Mirror")),
+    : Component (L"Mirror"),
       groupComponent (0),
       textButton (0),
       description (0),
@@ -42,18 +42,18 @@ Mirror::Mirror ()
       resetbutton (0),
       textButton2 (0)
 {
-    addAndMakeVisible (groupComponent = new GroupComponent (T("new group"),
-                                                            T("Mirror")));
+    addAndMakeVisible (groupComponent = new GroupComponent (L"new group",
+                                                            L"Mirror"));
     groupComponent->setTextLabelPosition (Justification::centredLeft);
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0xb0000000));
 
-    addAndMakeVisible (textButton = new TextButton (T("new button")));
-    textButton->setButtonText (T("Do it!"));
+    addAndMakeVisible (textButton = new TextButton (L"new button"));
+    textButton->setButtonText (L"Do it!");
     textButton->addListener (this);
     textButton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
-    addAndMakeVisible (description = new Label (T("new label"),
-                                                T("Reflects the whole spectrum around the frequency you specify. ")));
+    addAndMakeVisible (description = new Label (L"new label",
+                                                L"Reflects the whole spectrum around the frequency you specify. "));
     description->setFont (Font (15.0000f, Font::plain));
     description->setJustificationType (Justification::centredLeft);
     description->setEditable (false, false, false);
@@ -63,7 +63,7 @@ Mirror::Mirror ()
     description->setColour (TextEditor::textColourId, Colours::black);
     description->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (mirror_frequencyslider = new Slider (T("new slider")));
+    addAndMakeVisible (mirror_frequencyslider = new Slider (L"new slider"));
     mirror_frequencyslider->setRange (0, 22050, 0);
     mirror_frequencyslider->setSliderStyle (Slider::LinearHorizontal);
     mirror_frequencyslider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
@@ -72,8 +72,8 @@ Mirror::Mirror ()
     mirror_frequencyslider->setColour (Slider::textBoxBackgroundColourId, Colour (0xffffff));
     mirror_frequencyslider->addListener (this);
 
-    addAndMakeVisible (label = new Label (T("new label"),
-                                          T("Mirror frequency (Hz)")));
+    addAndMakeVisible (label = new Label (L"new label",
+                                          L"Mirror frequency (Hz)"));
     label->setFont (Font (15.0000f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
@@ -83,13 +83,13 @@ Mirror::Mirror ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (resetbutton = new TextButton (T("new button")));
-    resetbutton->setButtonText (T("Reset"));
+    addAndMakeVisible (resetbutton = new TextButton (L"new button"));
+    resetbutton->setButtonText (L"Reset");
     resetbutton->addListener (this);
     resetbutton->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
-    addAndMakeVisible (textButton2 = new TextButton (T("new button")));
-    textButton2->setButtonText (T("Redo it!"));
+    addAndMakeVisible (textButton2 = new TextButton (L"new button"));
+    textButton2->setButtonText (L"Redo it!");
     textButton2->addListener (this);
     textButton2->setColour (TextButton::buttonColourId, Colour (0x25bbbbff));
 
@@ -98,6 +98,7 @@ Mirror::Mirror ()
     //[/UserPreSize]
 
     setSize (600, 400);
+
 
     //[Constructor] You can add your own custom stuff here..
     buttonClicked(resetbutton);
@@ -117,6 +118,7 @@ Mirror::~Mirror()
     deleteAndZero (label);
     deleteAndZero (resetbutton);
     deleteAndZero (textButton2);
+
 
     //[Destructor]. You can add your own custom destruction code here..
     //[/Destructor]

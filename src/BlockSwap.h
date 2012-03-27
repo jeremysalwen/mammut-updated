@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  7 May 2011 2:27:31pm
+  Creation date:  26 Mar 2012 11:57:59pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -19,8 +19,8 @@
   ==============================================================================
 */
 
-#ifndef __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_5B4873E9__
-#define __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_5B4873E9__
+#ifndef __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
+#define __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
 
 //[Headers]     -- You can add your own extra header files here --
 #include "juce.h"
@@ -55,6 +55,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked);
 
 
+
     //==============================================================================
     juce_UseDebuggingNewOperator
 
@@ -74,6 +75,7 @@ private:
     Label* label3;
     TextButton* textButton2;
 
+
     //==============================================================================
     // (prevent copy constructor and operator= being generated..)
     BlockSwap (const BlockSwap&);
@@ -81,4 +83,4 @@ private:
 };
 
 
-#endif   // __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_5B4873E9__
+#endif   // __JUCER_HEADER_BLOCKSWAP_BLOCKSWAP_C6A77CE7__
